@@ -1,14 +1,852 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UPGRADE · студия детейлинга и тонировки, Ульяновск</title>
-<meta http-equiv="refresh" content="0; url=%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%90-%D0%B3%D1%80%D0%B0%D0%BD%D0%B0%D1%82-v2/">
-<link rel="canonical" href="./%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%90-%D0%B3%D1%80%D0%B0%D0%BD%D0%B0%D1%82-v2/">
-<style>body{font-family:system-ui;background:#101014;color:#f2f2f0;display:grid;place-items:center;height:100vh;margin:0}a{color:#e6203a}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sofia+Sans+Extra+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0c;
+  --panel:#101014;
+  --surface:#17171c;
+  --line:#26262d;
+  --ink:#f2f2f0;
+  --muted:#9aa0a8;
+  --granat:#b3122b;
+  --granat-hi:#e6203a;
+  --col:300px;
+  --m:36px;
+  --disp:'Sofia Sans Extra Condensed',sans-serif;
+  --body:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+::selection{background:var(--granat);color:#fff}
+img{display:block;max-width:100%}
+a{color:inherit}
+
+/* --- эф2: асфальт-пол под всей страницей --- */
+#floor{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block}
+#floor-note{position:fixed;left:calc(var(--col) + 16px);bottom:12px;z-index:1;color:#6f757d;font-size:.72rem;pointer-events:none;text-shadow:0 1px 6px rgba(0,0,0,.9)}
+
+.carbon{
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.035) 0 25%,transparent 25% 50%,rgba(255,255,255,.035) 50% 75%,transparent 75%),
+    linear-gradient(45deg,rgba(0,0,0,.5) 0 25%,transparent 25% 50%,rgba(0,0,0,.5) 50% 75%,transparent 75%),
+    var(--panel);
+  background-size:8px 8px,8px 8px,auto;
+}
+
+/* --- левая колонка --- */
+aside.menu{position:fixed;inset:0 auto 0 0;width:var(--col);display:flex;flex-direction:column;z-index:20;border-right:1px solid var(--line)}
+.menu-logo{display:block;padding:0 0 18px}
+.menu-logo img{width:100%;height:auto}
+.menu nav{display:flex;flex-direction:column;gap:10px;padding:6px 22px}
+.menu nav a{
+  display:flex;align-items:center;gap:12px;text-decoration:none;font-size:.95rem;font-weight:500;
+  color:var(--ink);background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:999px;padding:13px 20px;
+  transition:border-color .2s,background .2s,color .2s;
+}
+.menu nav a svg{flex:0 0 16px;stroke:var(--muted);transition:stroke .2s}
+.menu nav a:hover{border-color:var(--granat);background:rgba(179,18,43,.12)}
+.menu nav a:hover svg{stroke:var(--granat-hi)}
+.menu nav a.cta{background:var(--granat);border-color:var(--granat)}
+.menu nav a.cta svg{stroke:#fff}
+.menu nav a.cta:hover{background:var(--granat-hi);border-color:var(--granat-hi)}
+.menu-foot{margin-top:auto;padding:22px;border-top:1px solid var(--line);font-size:.84rem;color:var(--muted)}
+.menu-foot .tel{display:block;text-decoration:none;color:var(--ink);font-weight:600;font-size:1.05rem;margin-bottom:10px}
+.menu-foot .tel:hover{color:var(--granat-hi)}
+.menu-foot .addr{display:block;text-decoration:none}
+.menu-foot .addr:hover b{color:var(--granat-hi)}
+.menu-foot .addr b{color:var(--ink);font-weight:500;display:block;margin-bottom:6px}
+.menu-foot div+div{margin-top:6px}
+
+/* --- сцена --- */
+.stage{margin-left:var(--col);position:relative;z-index:1}
+.sec{padding:72px var(--m);position:relative}
+.sec-head{max-width:1100px;margin-bottom:40px}
+.kicker{display:inline-block;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:7px 16px;margin-bottom:18px;background:rgba(10,10,12,.75)}
+h2.cap{font-family:var(--disp);font-weight:800;text-transform:uppercase;letter-spacing:-.01em;font-size:clamp(1.9rem,1rem + 2.5vw,3.4rem);line-height:.96}
+.panel{background:rgba(12,12,15,.78);border:1px solid var(--line)}
+.gapfloor{height:26px}
+
+/* --- герой --- */
+.hero{position:relative;min-height:100svh;overflow:hidden;display:flex;align-items:flex-end}
+.hero .bg{position:absolute;inset:0}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(1.14) saturate(1.18)}
+.hero .shade{position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(10,10,12,.88) 0%,rgba(10,10,12,.55) 38%,rgba(10,10,12,.12) 70%,rgba(10,10,12,.35) 100%),
+  linear-gradient(0deg,rgba(10,10,12,.92) 0%,transparent 34%),
+  linear-gradient(180deg,rgba(10,10,12,.55) 0%,transparent 22%)}
+.hero-in{position:relative;width:100%;padding:120px var(--m) 150px;max-width:1100px}
+.hero h1{font-size:clamp(2.6rem,1.4rem + 4.4vw,5.2rem);font-weight:600;letter-spacing:-.045em;line-height:.99;max-width:12ch}
+.hero h1 em{font-style:normal;color:var(--granat-hi);text-shadow:0 0 34px rgba(230,32,58,.45)}
+.hero p.lead{max-width:32em;color:#cdd2d8;margin-top:26px;font-size:clamp(1.2rem,1.05rem + .6vw,1.5rem);line-height:1.45}
+.lead b{color:var(--ink);font-weight:500}
+.cta-row{margin-top:36px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;background:var(--granat);color:#fff;font-weight:500;border-radius:999px;padding:16px 34px;transition:background .2s,box-shadow .2s}
+.btn:hover{background:var(--granat-hi);box-shadow:0 6px 30px rgba(179,18,43,.45)}
+.btn.ghost{background:rgba(255,255,255,.06);color:var(--ink);border:1px solid var(--line)}
+.btn.ghost:hover{background:rgba(255,255,255,.1);box-shadow:none;border-color:#3a3a42}
+.rate{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;margin-top:56px}
+.rate .num{font-size:2.4rem;font-weight:600;letter-spacing:-.04em;line-height:1;color:var(--granat-hi)}
+.rate .cap{color:#cdd2d8;max-width:34em;font-size:.84rem}
+.rate .cap b{color:var(--ink);font-weight:500}
+.hero-cap{position:absolute;left:var(--m);bottom:22px;right:110px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:#8d939b;font-size:.78rem}
+.hero-sound{position:absolute;top:24px;right:var(--m);z-index:3;width:48px;height:48px;border-radius:50%;background:var(--granat);border:1px solid var(--granat);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s}
+.hero-sound:hover{background:var(--granat-hi)}
+.hero-sound.on{background:var(--granat-hi)}
+.hero-sound .ic-on{display:none}
+.hero-sound.on .ic-on{display:block}
+.hero-sound.on .ic-off{display:none}
+
+/* --- услуги: горизонтальная лента --- */
+.sec-head.split{max-width:none;display:flex;justify-content:space-between;align-items:flex-end;gap:26px;flex-wrap:wrap}
+.sec-head.split .sh-left{max-width:1100px}
+.rail-nav{display:flex;gap:10px;padding-bottom:6px}
+.rarr{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:rgba(16,16,20,.86);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .2s,color .2s}
+.rarr:hover:not(:disabled){border-color:var(--granat);color:var(--granat-hi)}
+.rarr:disabled{opacity:.35;cursor:default}
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px;cursor:grab;outline:none}
+.rail::-webkit-scrollbar{display:none}
+.rail.dragging{cursor:grabbing;scroll-snap-type:none}
+.rail:focus-visible{outline:1px solid var(--granat);outline-offset:4px}
+.rcard{scroll-snap-align:start;flex:0 0 clamp(240px,22vw,330px);background:rgba(16,16,20,.86);border:1px solid var(--line);overflow:hidden;transition:border-color .2s,transform .2s}
+.rcard:hover{border-color:#3a3a42;transform:translateY(-3px)}
+.rcard .ph{aspect-ratio:4/3;overflow:hidden;background:#111116}
+.rcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.rcard:hover .ph img{transform:scale(1.045)}
+.rcard .in{padding:14px 16px 16px}
+.rcard h3{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:1.3rem;line-height:1.02;letter-spacing:.01em}
+.rcard .price{color:var(--muted);font-size:.88rem;margin-top:6px}
+.rcard .price b{color:var(--ink);font-weight:600}
+.rcard.brand-cell{display:flex;align-items:center;justify-content:center;background:#0d0d10}
+.rcard.brand-cell span{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:1.9rem;color:#2a2a30;letter-spacing:.04em}
+
+/* --- работы: до/после со шторкой --- */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.case{border:1px solid var(--line);background:rgba(16,16,20,.86);overflow:hidden;transition:border-color .2s}
+.case:hover{border-color:#3a3a42}
+.ba{position:relative;aspect-ratio:4/3;overflow:hidden;touch-action:pan-y;cursor:ew-resize;user-select:none;-webkit-user-select:none}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba .before{clip-path:inset(0 50% 0 0)}
+.ba .bar{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;box-shadow:0 0 12px rgba(0,0,0,.65);transform:translateX(-1px);pointer-events:none}
+.ba .knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;background:var(--granat);border:2px solid #fff;display:flex;align-items:center;justify-content:center;color:#fff;pointer-events:none;box-shadow:0 4px 18px rgba(0,0,0,.5)}
+.ba .chip{position:absolute;top:10px;padding:4px 10px;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(5,5,7,.75);border-radius:999px;color:#cdd2d8;pointer-events:none}
+.ba .chip.l{left:10px}
+.ba .chip.r{right:10px;background:rgba(179,18,43,.88);color:#fff}
+.case .in{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:14px 16px 16px}
+.case h3{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:1.25rem;line-height:1.05;letter-spacing:.01em}
+.case .sub{color:var(--muted);font-size:.82rem;margin-top:4px}
+.case .price{color:var(--ink);font-weight:600;white-space:nowrap;font-size:.9rem}
+
+/* --- конфигуратор плёнки --- */
+.cfg-frame{position:relative;height:min(78vh,760px);border:1px solid var(--line);background:#070708}
+.cfg-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.cfg-cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:18px}
+.cfg-note{color:var(--muted);font-size:.82rem;max-width:36em}
+
+/* --- полоса доверия (как у PLT) --- */
+.trust-plt{display:grid;grid-template-columns:1.7fr 1fr;gap:14px}
+.trust-main{background:rgba(14,14,17,.9);border:1px solid var(--line);padding:26px;display:flex;flex-direction:column;gap:6px}
+.t-title{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:1.5rem;letter-spacing:.01em;margin-bottom:12px}
+.t-row{display:grid;grid-template-columns:1fr 1fr;gap:18px 30px;flex:1}
+.t-col{display:flex;flex-direction:column;gap:16px}
+.t-col .side-card{flex:1}
+.t-rating{display:flex;flex-direction:column;gap:4px;border-left:2px solid var(--line);padding-left:16px}
+.t-name{color:var(--muted);font-size:.85rem;font-weight:600}
+.t-name.brand{color:#e8b64c}
+.t-score b{font-family:var(--disp);font-weight:800;font-size:2.2rem;line-height:1;color:var(--ink)}
+.t-score i{font-style:normal;color:var(--granat-hi);font-size:.95rem;letter-spacing:.12em}
+.t-sub{color:var(--muted);font-size:.78rem;max-width:20em}
+.t-rating>a{color:#cdd2d8;font-size:.82rem;text-decoration:underline;text-underline-offset:3px;margin-top:auto}
+.t-rating>a:hover{color:var(--granat-hi)}
+.trust-side{background:#101d3f;border:1px solid rgba(217,178,106,.55);padding:26px;display:flex;flex-direction:column;justify-content:flex-start;gap:22px}
+.trust-side .awards{flex:1;align-items:center}
+.trust-side .side-big{color:#e8b64c;font-size:2.4rem}
+.trust-side .stick{background:transparent}
+.side-card{background:rgba(14,14,17,.9);border:1px solid var(--line);padding:24px;display:flex;flex-direction:column;gap:10px;justify-content:center}
+.side-big{font-family:var(--disp);font-weight:800;font-size:2.6rem;line-height:.95;color:var(--granat-hi)}
+.side-big.gold{color:#e8b64c}
+.side-t{color:var(--muted);font-size:.85rem;max-width:22em}
+.side-btn{align-self:flex-start;margin-top:auto;text-decoration:none;background:var(--granat);color:#fff;padding:11px 22px;font-size:.9rem;border-radius:999px;transition:background .2s}
+.side-btn:hover{background:var(--granat-hi)}
+.awards{display:flex;gap:12px}
+.stick{flex:1;background:#101d3f;border:1px solid rgba(217,178,106,.55);border-radius:14px;padding:30px 12px 26px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
+.stick svg{width:64px;height:auto;color:#d9b26a}
+.stick .s1{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#d9b26a;line-height:1.3}
+.stick .s2{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:1.45rem;line-height:1;color:#fff}
+.stick .yr{font-family:var(--disp);font-weight:800;font-size:3.4rem;line-height:.9;color:#fff}
+.side-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.side-links a{text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:.85rem;color:var(--ink);background:rgba(255,255,255,.03)}
+.side-links a:hover{border-color:var(--granat)}
+
+/* --- FAQ с инверсией --- */
+.faq{max-width:1100px}
+.q{border-top:1px solid var(--line)}
+.q:last-child{border-bottom:1px solid var(--line)}
+.q summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:70px 1fr 40px;align-items:center;gap:14px;padding:22px 8px}
+.q summary::-webkit-details-marker{display:none}
+.q .num{font-family:var(--disp);font-weight:800;font-size:1.6rem;color:#3a3a42}
+.q h3{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:1.25rem;letter-spacing:.01em}
+.q .pm{color:var(--muted);font-size:1.4rem;text-align:right}
+.q .ans{padding:0 8px 24px 92px;color:#c3c8ce;max-width:60em}
+.q[open]{background:rgba(10,10,12,.88);border-color:#3a3a42}
+.q[open] .num{color:var(--granat-hi)}
+.q[open] .pm .v{display:none}
+.q:not([open]) .pm .x{display:none}
+
+/* --- контакты --- */
+.contacts{display:grid;grid-template-columns:1fr 1.2fr;gap:14px}
+.cbox{background:rgba(16,16,20,.86);border:1px solid var(--line);padding:30px 32px 24px;display:flex;flex-direction:column}
+.cbox .logo-mini{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:1.9rem;line-height:.95;letter-spacing:.02em;color:var(--ink)}
+.cbox .logo-mini em{font-style:normal;color:var(--granat-hi)}
+.rate-line{display:flex;align-items:center;gap:10px;margin:14px 0 4px}
+.rate-line .star{color:var(--granat-hi);font-weight:700;font-size:1.3rem}
+.rate-line .sub{color:var(--muted);font-size:.8rem}
+.crow{display:grid;grid-template-columns:130px 1fr;gap:14px;padding:14px 0;border-top:1px solid var(--line);font-size:.95rem}
+.cbox .crow{flex:1;align-items:center}
+.crow .k{color:var(--muted)}
+.crow a{text-decoration:none}
+.crow a:hover{color:var(--granat-hi)}
+.map{position:relative;min-height:380px;border:1px solid var(--line);background:#ffffff;overflow:hidden}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.map .btnmap{position:absolute;right:16px;bottom:11px;white-space:nowrap;background:#ffffff;color:#1c1c20;text-decoration:none;border:none;padding:8px 14px;font-weight:500;font-size:.88rem;border-radius:10px;display:flex;align-items:center;gap:8px;box-shadow:0 2px 10px rgba(0,0,0,.2);z-index:2}
+.map .btnmap:hover{box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.map .btnmap svg{color:var(--granat);flex:0 0 auto}
+
+/* --- футер-плакат --- */
+footer{position:relative;overflow:hidden;background:#060608;border-top:1px solid var(--line);margin-top:26px}
+.foot-in{padding:64px var(--m) 40px;display:flex;gap:40px;flex-wrap:wrap}
+.slogan{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:clamp(1.8rem,1rem + 2.4vw,3rem);line-height:.98;max-width:14ch;color:var(--ink)}
+.foot-cols{margin-left:auto;display:flex;gap:60px;flex-wrap:wrap;font-size:.9rem;color:var(--muted)}
+.foot-cols b{display:block;color:var(--ink);font-weight:600;margin-bottom:10px;text-transform:uppercase;letter-spacing:.08em;font-size:.75rem}
+.foot-cols a{display:block;text-decoration:none;padding:3px 0}
+.foot-cols a:hover{color:var(--granat-hi)}
+.wordmark{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:clamp(4rem,12vw,12rem);line-height:.8;color:#151519;text-align:center;letter-spacing:.02em;user-select:none;margin-top:-10px}
+.legal{padding:14px var(--m) 22px;color:#565b62;font-size:.75rem}
+
+/* появление */
+.rise{opacity:0;transform:translateY(22px)}
+.rise.on{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
+
+/* --- модалка записи --- */
+.modal{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal .veil{position:absolute;inset:0;background:rgba(5,5,7,.78)}
+.modal .box{position:relative;width:min(560px,100%);background:#121216;border:1px solid #3a3a42;padding:40px 44px 34px;max-height:92vh;overflow:auto}
+.modal .x{position:absolute;right:16px;top:14px;background:none;border:0;color:var(--muted);font-size:1.6rem;cursor:pointer;line-height:1}
+.modal .x:hover{color:var(--granat-hi)}
+.modal h3{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:2.3rem;line-height:.95}
+.modal .sub{color:var(--muted);margin:12px 0 24px;font-size:.95rem}
+.modal input{width:100%;background:#0c0c0f;border:1px solid var(--line);color:var(--ink);padding:16px 18px;font:inherit;font-size:1rem;margin-bottom:12px;outline:none}
+.modal input:focus{border-color:var(--granat)}
+.modal .send{width:100%;background:var(--granat);color:#fff;border:0;padding:17px;font:inherit;font-weight:600;cursor:pointer;transition:background .2s;border-radius:0}
+.modal .send:hover{background:var(--granat-hi)}
+.modal .alt{display:flex;gap:10px;margin-top:14px}
+.modal .alt a{flex:1;text-align:center;text-decoration:none;border:1px solid var(--line);padding:13px;color:var(--ink);font-size:.9rem;background:rgba(255,255,255,.03)}
+.modal .alt a:hover{border-color:var(--granat)}
+.modal .hint{color:#6f757d;font-size:.75rem;margin-top:14px;line-height:1.5}
+body.modal-open{overflow:hidden}
+
+/* телефон */
+@media (max-width:920px){
+  :root{--m:20px}
+  aside.menu{position:static;width:100%;flex-direction:column;border-right:none;border-bottom:1px solid var(--line)}
+  .menu nav{flex-direction:row;overflow-x:auto;padding:12px 16px;gap:8px;scrollbar-width:none}
+  .menu nav::-webkit-scrollbar{display:none}
+  .menu nav a{white-space:nowrap;padding:10px 18px;font-size:.9rem}
+  .menu-foot{display:flex;gap:18px;justify-content:space-between;flex-wrap:wrap;margin-top:0}
+  .stage{margin-left:0}
+  .rcard{flex-basis:min(72vw,320px)}
+  .rarr{width:42px;height:42px}
+  .cases{grid-template-columns:1fr}
+  .works{grid-template-columns:1fr 1fr}
+  .contacts{grid-template-columns:1fr}
+  .trust-plt{display:flex;flex-direction:column}
+  .t-row{grid-template-columns:1fr;gap:14px}
+  .hero{min-height:82svh}
+  .q summary{grid-template-columns:40px 1fr 30px}
+  .q .ans{padding-left:54px}
+}
+</style>
 </head>
 <body>
-<p>Открываем сайт UPGRADE… <a href="%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%90-%D0%B3%D1%80%D0%B0%D0%BD%D0%B0%D1%82-v2/">Перейти вручную</a></p>
-<script>location.replace('%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%90-%D0%B3%D1%80%D0%B0%D0%BD%D0%B0%D1%82-v2/');</script>
+
+<canvas id="floor" aria-hidden="true"></canvas>
+<p id="floor-note">эф2 · жидкий асфальт: води мышкой, клик — всплеск · пол под всеми секциями</p>
+
+<aside class="menu carbon">
+  <a class="menu-logo" href="#" aria-label="UPGRADE Detailing studio">
+    <img src="/assets/logo-granat.jpg" alt="UPGRADE Detailing studio">
+  </a>
+  <nav aria-label="Разделы сайта">
+    <a href="#uslugi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 2.5h11v11h-11z"/></svg> Услуги и цены</a>
+    <a href="#raboty"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M2 12l4-8 3 5 2-3 3 6z"/></svg> Работы до/после</a>
+    <a href="#otzyvy"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 3h11v7h-6l-3 3v-3h-2z"/></svg> Отзывы</a>
+    <a href="#zapis" class="cta js-zapis"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M3 2.5h3l1 3-1.7 1.2a9 9 0 0 0 4 4L10.5 9l3 1v3a1 1 0 0 1-1.1 1A11.5 11.5 0 0 1 2 3.6a1 1 0 0 1 1-1.1z"/></svg> Записаться</a>
+    <a href="#kontakty"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M8 14s5-4.2 5-8a5 5 0 0 0-10 0c0 3.8 5 8 5 8z"/><circle cx="8" cy="6" r="1.6"/></svg> Контакты</a>
+  </nav>
+  <div class="menu-foot">
+    <a class="tel" href="tel:+79020066777">+7 902 006-67-77</a>
+    <a class="addr" href="#kontakty"><b>Туполева, 7Б</b>пр-т Туполева, 7Б</a>
+    <a class="addr" href="#kontakty"><b>Михайлова, 9</b>ул. Врача Михайлова, 9</a>
+    <div>Ежедневно с 9:00 до 20:00</div>
+  </div>
+</aside>
+
+<main class="stage">
+
+  <!-- ГЕРОЙ (наш, не обсуждается) -->
+  <section class="hero">
+    <div class="bg" aria-hidden="true">
+      <video autoplay muted loop playsinline preload="metadata" poster="/assets/hero-upg-poster.jpg">
+        <source src="/assets/hero-upg.mp4" type="video/mp4">
+      </video>
+      <div class="shade"></div>
+    </div>
+    <button class="hero-sound" id="hero-sound" type="button" aria-pressed="false" aria-label="Включить звук">
+      <svg class="ic-off" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3 8v4h3l4 3.5v-11L6 8H3z"/><line x1="13.5" y1="8" x2="17.5" y2="12"/><line x1="17.5" y1="8" x2="13.5" y2="12"/>
+      </svg>
+      <svg class="ic-on" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3 8v4h3l4 3.5v-11L6 8H3z"/><path d="M13.5 7.5a4 4 0 0 1 0 5"/><path d="M15.8 5.5a7 7 0 0 1 0 9"/>
+      </svg>
+    </button>
+    <div class="hero-in">
+      <h1 class="rise on">Возвращаем чувство <em>новизны</em></h1>
+      <p class="lead rise on">Студия <b>тонировки и детейлинга в Ульяновске</b>. Полировка кузова, керамическое покрытие, оклейка плёнкой, автосвет, химчистка салона.</p>
+      <div class="cta-row rise on">
+        <a class="btn js-zapis" href="#zapis">Записаться: +7 902 006-67-77</a>
+        <a class="btn ghost" href="#uslugi">Смотреть цены</a>
+      </div>
+      <div class="rate rise on">
+        <div class="num">5,0</div>
+        <div class="cap"><b>158 оценок, премия 2ГИС.</b> 149 отзывов от клиентов студии. Работаем по записи, ежедневно с 9:00.</div>
+      </div>
+    </div>
+    <p class="hero-cap">
+      <span>Атмосферное кино (CGI-сцена), не съёмка процесса. Реальные работы студии — ниже.</span>
+      <span>UPGRADE · Ульяновск</span>
+    </p>
+  </section>
+
+  <!-- шов-эф2 -->
+  <div class="gapfloor" aria-hidden="true"></div>
+
+  <!-- УСЛУГИ И ЦЕНЫ: горизонтальная лента -->
+  <section class="sec" id="uslugi">
+    <div class="sec-head split">
+      <div class="sh-left">
+        <span class="kicker">Услуги и цены</span>
+        <h2 class="cap">Детейлинг, после которого жалко выезжать из бокса</h2>
+        <p style="color:#c3c8ce;margin-top:14px;max-width:44em">Цены — стартовые с карточки Яндекс.Карт (актуальность проверяем у студии), точную смету называем после осмотра. Скидка 20% по промокоду 2ГИС — просто назови его при записи.</p>
+      </div>
+      <div class="rail-nav">
+        <button type="button" class="rarr" id="rail-prev" aria-label="Листать назад">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11.5 3.5 6 9l5.5 5.5"/></svg>
+        </button>
+        <button type="button" class="rarr" id="rail-next" aria-label="Листать вперёд">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5 12 9l-5.5 5.5"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="rail" id="rail" tabindex="0" aria-label="Услуги — горизонтальная лента, листай стрелками или мышью">
+      <article class="rcard"><div class="ph"><img loading="lazy" decoding="async" src="/media/tonirovka.jpg" alt="Тонировка стёкол"></div><div class="in"><h3>Тонировка</h3><div class="price"><b>от —</b> · уточняем</div></div></article>
+      <article class="rcard"><div class="ph"><img loading="lazy" decoding="async" src="/media/polirovka.jpg" alt="Полировка кузова до и после"></div><div class="in"><h3>Полировка кузова</h3><div class="price">детейлинг-полировка · <b>от 15 000 ₽</b></div></div></article>
+      <article class="rcard"><div class="ph"><img loading="lazy" decoding="async" src="/media/keramika.jpg" alt="Керамическое покрытие"></div><div class="in"><h3>Керамика</h3><div class="price"><b>от —</b> · уточняем</div></div></article>
+      <article class="rcard"><div class="ph"><img loading="lazy" decoding="async" src="/media/bronya.jpg" alt="Бронирование плёнкой"></div><div class="in"><h3>Бронирование плёнкой</h3><div class="price">полиуретан · <b>от 2 000 ₽</b></div></div></article>
+      <article class="rcard"><div class="ph"><img loading="lazy" decoding="async" src="/media/okleyka.jpg" alt="Оклейка кузова плёнкой"></div><div class="in"><h3>Оклейка кузова</h3><div class="price"><b>от —</b> · уточняем</div></div></article>
+      <article class="rcard"><div class="ph"><img loading="lazy" decoding="async" src="/media/antigrav.jpg" alt="Антигравийная защита"></div><div class="in"><h3>АПП</h3><div class="price"><b>от —</b> · уточняем</div></div></article>
+      <article class="rcard"><div class="ph"><img loading="lazy" decoding="async" src="/media/himchistka.jpg" alt="Химчистка салона"></div><div class="in"><h3>Химчистка салона</h3><div class="price">полная · <b>от 5 000 ₽</b></div></div></article>
+      <article class="rcard"><div class="ph"><img loading="lazy" decoding="async" src="/media/shumoizolyaciya.jpg" alt="Шумоизоляция"></div><div class="in"><h3>Шумоизоляция</h3><div class="price"><b>от 5 000 ₽</b></div></div></article>
+      <article class="rcard"><div class="ph"><img loading="lazy" decoding="async" src="/media/uteplenie_salona.jpg" alt="Утепление салона"></div><div class="in"><h3>Утепление салона</h3><div class="price"><b>от —</b> · уточняем</div></div></article>
+      <article class="rcard"><div class="ph"><img loading="lazy" decoding="async" src="/media/avtosvet.jpg" alt="Автосвет"></div><div class="in"><h3>Автосвет и линзы</h3><div class="price"><b>от 1 000 ₽</b></div></div></article>
+      <article class="rcard"><div class="ph"><img loading="lazy" decoding="async" src="/media/polirovka_far.jpg" alt="Полировка фар"></div><div class="in"><h3>Полировка фар</h3><div class="price">с оклейкой плёнкой · <b>от 1 500 ₽</b></div></div></article>
+      <article class="rcard"><div class="ph"><img loading="lazy" decoding="async" src="/media/remont_stekol.jpg" alt="Ремонт стёкол"></div><div class="in"><h3>Ремонт стёкол</h3><div class="price"><b>от 1 000 ₽</b></div></div></article>
+      <article class="rcard"><div class="ph"><img loading="lazy" decoding="async" src="/media/hromirovanie.jpg" alt="Хромирование"></div><div class="in"><h3>Хромирование</h3><div class="price"><b>от —</b> · уточняем</div></div></article>
+      <article class="rcard"><div class="ph"><img loading="lazy" decoding="async" src="/media/parktronik.jpg" alt="Парктроники и камеры"></div><div class="in"><h3>Парктроники и камеры</h3><div class="price"><b>от —</b> · уточняем</div></div></article>
+      <article class="rcard brand-cell" style="aspect-ratio:4/3;align-self:stretch" aria-hidden="true"><span>UPGRADE</span></article>
+      <article class="rcard brand-cell" style="aspect-ratio:4/3;align-self:stretch" aria-hidden="true"><span>DETAILING</span></article>
+    </div>
+  </section>
+
+  <!-- шов-эф2 -->
+  <div class="gapfloor" aria-hidden="true"></div>
+
+  <!-- РАБОТЫ: до/после реальных машин -->
+  <section class="sec" id="raboty">
+    <div class="sec-head">
+      <span class="kicker">Работы до/после</span>
+      <h2 class="cap">Пусть дороги будут грязными. Ваша машина — чистой</h2>
+      <p style="color:#c3c8ce;margin-top:14px;max-width:44em">Потяни шторку на фотографии: слева — как машина приехала, справа — как уехала.</p>
+    </div>
+    <div class="cases">
+      <figure class="case">
+        <div class="ba" data-ba>
+          <img class="after" loading="lazy" decoding="async" src="/media/kuzov_posle.jpg" alt="Land Rover после детейлинг-полировки: глубокий глянец">
+          <img class="before" loading="lazy" decoding="async" src="/media/kuzov_do.jpg" alt="Land Rover до полировки: мутная краска, разводы">
+          <span class="chip l">до</span><span class="chip r">после</span>
+          <span class="bar"></span>
+          <span class="knob" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 5.5 3 9l3.5 3.5M11.5 5.5 15 9l-3.5 3.5"/></svg></span>
+        </div>
+        <figcaption class="in">
+          <div><h3>Полировка кузова</h3><div class="sub">Land Rover Discovery Sport</div></div>
+          <div class="price">от 15 000 ₽</div>
+        </figcaption>
+      </figure>
+      <figure class="case">
+        <div class="ba" data-ba>
+          <img class="after" loading="lazy" decoding="async" src="/media/fara_posle.jpg" alt="Фара после полировки: прозрачное стекло">
+          <img class="before" loading="lazy" decoding="async" src="/media/fara_do.jpg" alt="Фара до полировки: мутный пожелтевший пластик">
+          <span class="chip l">до</span><span class="chip r">после</span>
+          <span class="bar"></span>
+          <span class="knob" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 5.5 3 9l3.5 3.5M11.5 5.5 15 9l-3.5 3.5"/></svg></span>
+        </div>
+        <figcaption class="in">
+          <div><h3>Полировка фар</h3><div class="sub">с оклейкой плёнкой</div></div>
+          <div class="price">от 1 500 ₽</div>
+        </figcaption>
+      </figure>
+      <figure class="case">
+        <div class="ba" data-ba>
+          <img class="after" loading="lazy" decoding="async" src="/media/him1_posle.jpg" alt="Салон после химчистки: чистая обивка">
+          <img class="before" loading="lazy" decoding="async" src="/media/him_do.jpg" alt="Салон до химчистки: обивка в пятнах">
+          <span class="chip l">до</span><span class="chip r">после</span>
+          <span class="bar"></span>
+          <span class="knob" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 5.5 3 9l3.5 3.5M11.5 5.5 15 9l-3.5 3.5"/></svg></span>
+        </div>
+        <figcaption class="in">
+          <div><h3>Химчистка салона</h3><div class="sub">полная, обивка дивана</div></div>
+          <div class="price">от 5 000 ₽</div>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- шов-эф2 -->
+  <div class="gapfloor" aria-hidden="true"></div>
+
+  <!-- КОНФИГУРАТОР ПЛЁНКИ (эф3) -->
+  <section class="sec" id="plonki">
+    <div class="sec-head">
+      <span class="kicker">Оклейка в цвете</span>
+      <h2 class="cap">Выбери свою плёнку — до визита</h2>
+      <p style="color:#c3c8ce;margin-top:14px;max-width:44em">Крути машину, щёлкай цветами и фактурами: глянец, мат или хром. Так оклейка выглядит на авто ещё до того, как оно заехало к нам.</p>
+    </div>
+    <div class="cfg-frame">
+      <iframe src="/demo-okleyka.html" title="Конфигуратор плёнки UPGRADE" loading="lazy"></iframe>
+    </div>
+    <div class="cfg-cta">
+      <a class="btn js-zapis" href="#zapis">Записаться на оклейку</a>
+      <span class="cfg-note">Машина в конфигураторе — демо-модель. Цвета плёнок — реальные каталоги, которыми работаем.</span>
+    </div>
+  </section>
+
+  <!-- шов-эф2 -->
+  <div class="gapfloor" aria-hidden="true"></div>
+
+  <!-- ОТЗЫВЫ / ДОВЕРИЕ (по PLT: рейтинги + мини-карта с пином, соцкарточки справа) -->
+  <section class="sec" id="otzyvy">
+    <div class="sec-head">
+      <span class="kicker">Отзывы и награды</span>
+      <h2 class="cap">Лучший детейлинг Ульяновска 2023 и 2026</h2>
+    </div>
+    <div class="trust-plt">
+      <div class="trust-main">
+        <div class="t-title">Присоединяйтесь к довольным клиентам</div>
+        <div class="t-row">
+          <div class="t-col">
+          <div class="t-rating">
+            <span class="t-name brand">Яндекс Карты</span>
+            <span class="t-score"><b>5,0</b> <i>★★★★★</i></span>
+            <span class="t-sub">244 оценки · «Хорошее место 2026»</span>
+            <a href="https://yandex.ru/maps/org/apgreyd/54518803692/?from=mapframe&ll=48.576228%2C54.367310&source=mapframe&utm_source=mapframe&z=17.03" target="_blank" rel="noopener">Перейти в Карты</a>
+          </div>
+          <div class="side-card connect">
+            <div class="side-big" style="font-size:1.5rem">Будь на связи</div>
+            <div class="side-links">
+              <a href="https://t.me/upgrade_detailing" target="_blank" rel="noopener">Telegram</a>
+              <a href="https://vk.ru/upgrade_detailing" target="_blank" rel="noopener">VK</a>
+              <a href="https://ok.ru/potrizhitskii" target="_blank" rel="noopener">ОК</a>
+              <a href="tel:+79020066777">WhatsApp · Viber</a>
+            </div>
+          </div>
+          </div>
+          <div class="t-col">
+          <div class="t-rating">
+            <span class="t-name brand">2ГИС</span>
+            <span class="t-score"><b>5,0</b> <i>★★★★★</i></span>
+            <span class="t-sub">158 оценок · премия 2ГИС 2023 и 2026</span>
+            <a href="https://2gis.ru/ulyanovsk/firm/70000001037187476" target="_blank" rel="noopener">Перейти в 2ГИС</a>
+          </div>
+          <div class="side-card gal">
+            <div class="side-big gold">499+</div>
+            <div class="side-t">фото и видео работ в галерее Яндекс.Карт</div>
+            <a class="side-btn" href="https://yandex.ru/maps/org/apgreyd/54518803692/" target="_blank" rel="noopener">Смотреть галерею</a>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="trust-side">
+        <div class="side-big">Премия 2ГИС</div>
+        <div class="awards">
+          <div class="stick">
+            <svg viewBox="0 0 32 36" fill="currentColor" aria-hidden="true"><path d="M16 1C8.8 1 3 6.8 3 14c0 7.6 7.4 14.6 12 20.2.5.6 1.5.6 2 0C21.6 28.6 29 21.6 29 14 29 6.8 23.2 1 16 1z"/><path d="M16 8.4l1.9 3.8 4.2.6-3 3 .7 4.1-3.8-2-3.8 2 .7-4.1-3-3 4.2-.6z" fill="#101d3f"/></svg>
+            <span class="s1">Премия 2ГИС</span>
+            <span class="s2">Лучший детейлинг</span>
+            <span class="yr">2026</span>
+          </div>
+          <div class="stick">
+            <svg viewBox="0 0 32 36" fill="currentColor" aria-hidden="true"><path d="M16 1C8.8 1 3 6.8 3 14c0 7.6 7.4 14.6 12 20.2.5.6 1.5.6 2 0C21.6 28.6 29 21.6 29 14 29 6.8 23.2 1 16 1z"/><path d="M16 8.4l1.9 3.8 4.2.6-3 3 .7 4.1-3.8-2-3.8 2 .7-4.1-3-3 4.2-.6z" fill="#101d3f"/></svg>
+            <span class="s1">Премия 2ГИС</span>
+            <span class="s2">Лучший детейлинг</span>
+            <span class="yr">2023</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- шов-эф2 -->
+  <div class="gapfloor" aria-hidden="true"></div>
+
+  <!-- FAQ -->
+  <section class="sec" id="faq">
+    <div class="sec-head">
+      <span class="kicker">Вопрос — ответ</span>
+      <h2 class="cap">Отвечаем до того, как спросят</h2>
+    </div>
+    <div class="faq">
+      <details class="q">
+        <summary><span class="num">01</span><h3>Чем детейлинг отличается от мойки?</h3><span class="pm"><span class="v">+</span><span class="x">×</span></span></summary>
+        <div class="ans">Мойка удаляет грязь. Детейлинг возвращает состояние: полировка снимает царапины и «паутинку», керамика защищает, салон чистится паром до заводского вида. Результат — как будто купили машину вчера.</div>
+      </details>
+      <details class="q">
+        <summary><span class="num">02</span><h3>Как получить скидку 20%?</h3><span class="pm"><span class="v">+</span><span class="x">×</span></span></summary>
+        <div class="ans">Позвоните и назовите промокод 2ГИС. Скидка действует на детейлинг, тонинг и тонировку.</div>
+      </details>
+      <details class="q">
+        <summary><span class="num">03</span><h3>Сколько времени занимают работы?</h3><span class="pm"><span class="v">+</span><span class="x">×</span></span></summary>
+        <div class="ans">Сроким называем по каждой услуге после осмотра: от часа на полировку фар до нескольких дней на комплекс.</div>
+      </details>
+      <details class="q">
+        <summary><span class="num">04</span><h3>Куда ехать — Туполева 7Б или Михайлова 9?</h3><span class="pm"><span class="v">+</span><span class="x">×</span></span></summary>
+        <div class="ans">Оба адреса работают, студия одна. Скажите, с какой стороны города удобнее, — запишем туда.</div>
+      </details>
+      <details class="q">
+        <summary><span class="num">05</span><h3>Есть ли гарантия на работы?</h3><span class="pm"><span class="v">+</span><span class="x">×</span></span></summary>
+        <div class="ans">Да, гарантию на каждый вид работ подтверждаем при записи и в договоре.</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- шов-эф2 -->
+  <div class="gapfloor" aria-hidden="true"></div>
+
+  <!-- КОНТАКТЫ -->
+  <section class="sec" id="kontakty">
+    <div class="sec-head">
+      <span class="kicker">Контакты</span>
+      <h2 class="cap">Два адреса — один стандарт</h2>
+    </div>
+    <div class="contacts">
+      <div class="cbox">
+        <div class="logo-mini">UPGRADE<br><em>Detailing studio</em></div>
+        <div class="rate-line"><span class="star">★ 5,0</span><span class="sub">158 оценок · премия 2ГИС 2023 и 2026</span></div>
+        <div class="crow"><span class="k">Телефон</span><span><a href="tel:+79020066777"><b>+7 902 006-67-77</b></a> · WhatsApp · Viber</span></div>
+        <div class="crow"><span class="k">Почта</span><a href="mailto:upgrade_ulsk@mail.ru">upgrade_ulsk@mail.ru</a></div>
+        <div class="crow"><span class="k">Адрес 1</span><span>Ульяновск, пр-т Туполева, 7Б</span></div>
+        <div class="crow"><span class="k">Адрес 2</span><span>Ульяновск, ул. Врача Михайлова, 9</span></div>
+        <div class="crow"><span class="k">Режим</span><span>Ежедневно, 9:00–20:00</span></div>
+      </div>
+      <div class="map">
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=48.576228%2C54.367310&z=17&org=54518803692" title="Как найти студию UPGRADE" loading="lazy" allowfullscreen></iframe>
+        <a class="btnmap" href="https://2gis.ru/ulyanovsk/firm/70000001037187476" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C7.9 2 4.6 5.3 4.6 9.4c0 5.7 6.4 11.7 6.7 12 .2.2.5.2.7 0 .3-.3 6.7-6.3 6.7-12C19.4 5.3 16.1 2 12 2zm0 10.2a2.8 2.8 0 1 1 0-5.6 2.8 2.8 0 0 1 0 5.6z"/></svg>Проложить маршрут · 2ГИС</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФУТЕР-ПЛАКАТ -->
+  <footer id="foot">
+    <div class="foot-in">
+      <div class="slogan">Возвращаем чувство новизны</div>
+      <div class="foot-cols">
+        <div>
+          <b>Услуги</b>
+          <a href="#uslugi">Тонировка</a>
+          <a href="#uslugi">Детейлинг</a>
+          <a href="#uslugi">Оклейка</a>
+          <a href="#uslugi">Автосвет</a>
+        </div>
+        <div>
+          <b>Студия</b>
+          <a href="#raboty">Наши работы</a>
+          <a href="#otzyvy">Отзывы</a>
+          <a href="#faq">Вопросы</a>
+          <a href="#kontakty">Контакты</a>
+        </div>
+        <div>
+          <b>Связь</b>
+          <a href="tel:+79020066777">+7 902 006-67-77</a>
+          <a href="https://t.me/upgrade_detailing">Telegram</a>
+          <a href="https://vk.ru/upgrade_detailing">VK</a>
+          <a href="mailto:upgrade_ulsk@mail.ru">upgrade_ulsk@mail.ru</a>
+        </div>
+      </div>
+    </div>
+    <div class="wordmark" aria-hidden="true">UPGRADE</div>
+    <div class="legal">© 2026 Upgrade, студия детейлинга · Ульяновск, Туполева 7Б · Врача Михайлова 9</div>
+  </footer>
+
+</main>
+
+<!-- модалка записи -->
+<div class="modal" id="zapis" role="dialog" aria-modal="true" aria-label="Запись в студию">
+  <div class="veil" data-close></div>
+  <div class="box">
+    <button class="x" type="button" data-close aria-label="Закрыть">×</button>
+    <h3>Записаться в студию</h3>
+    <p class="sub">Заполни — заявка уйдёт мастеру в WhatsApp, ответим и подтвердим время.</p>
+    <form id="zap-form">
+      <input id="zap-name" type="text" name="name" placeholder="Как тебя зовут" autocomplete="name">
+      <input id="zap-phone" type="tel" name="phone" placeholder="Телефон: +7 ___ ___-__-__" autocomplete="tel" required>
+      <button class="send" type="submit">Отправить заявку</button>
+    </form>
+    <div class="alt">
+      <a href="tel:+79020066777">Позвонить</a>
+      <a href="https://t.me/upgrade_detailing" target="_blank" rel="noopener">Telegram</a>
+    </div>
+    <p class="hint">Заявка уходит в WhatsApp студии +7 902 006-67-77 — номер из карточек 2ГИС и Яндекс.Карт. Работаем ежедневно 9:00–20:00.</p>
+  </div>
+</div>
+
+<script>
+/* появление */
+(function(){
+  var io;
+  try { io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } });
+  },{threshold:.12}); } catch(e){ return; }
+  document.querySelectorAll('.sec-head, .rcard, .case, .trust .big, .q, .cbox, .map').forEach(function(el){ io.observe(el); });
+})();
+/* --- до/после: шторка --- */
+(function(){
+  document.querySelectorAll('[data-ba]').forEach(function(ba){
+    var before=ba.querySelector('.before');
+    var bar=ba.querySelector('.bar');
+    var knob=ba.querySelector('.knob');
+    function set(p){
+      p=Math.max(3,Math.min(97,p));
+      var clip='inset(0 '+(100-p)+'% 0 0)';
+      if(before)before.style.clipPath=clip;
+      if(bar)bar.style.left=p+'%';
+      if(knob)knob.style.left=p+'%';
+    }
+    var down=false;
+    function move(e){
+      if(!down)return;
+      var r=ba.getBoundingClientRect();
+      set((e.clientX-r.left)/r.width*100);
+    }
+    ba.addEventListener('pointerdown',function(e){
+      down=true;
+      if(ba.setPointerCapture){try{ba.setPointerCapture(e.pointerId);}catch(err){}}
+      move(e);
+      e.preventDefault();
+    });
+    ba.addEventListener('pointermove',move);
+    window.addEventListener('pointerup',function(){down=false;});
+    set(50);
+  });
+})();
+/* --- лента услуг: стрелки, drag, клавиатура --- */
+(function(){
+  var rail=document.getElementById('rail');
+  if(!rail)return;
+  var prev=document.getElementById('rail-prev'),next=document.getElementById('rail-next');
+  function upd(){
+    prev.disabled = rail.scrollLeft < 10;
+    next.disabled = rail.scrollLeft > rail.scrollWidth - rail.clientWidth - 10;
+  }
+  prev.addEventListener('click',function(){ rail.scrollBy({left:-rail.clientWidth*.85,behavior:'smooth'}); });
+  next.addEventListener('click',function(){ rail.scrollBy({left:rail.clientWidth*.85,behavior:'smooth'}); });
+  rail.addEventListener('scroll',upd,{passive:true});
+  window.addEventListener('resize',upd); upd();
+  rail.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'){e.preventDefault();next.click();}
+    if(e.key==='ArrowLeft'){e.preventDefault();prev.click();}
+  });
+  /* перетаскивание мышью */
+  var down=false,sx=0,sl=0,moved=false;
+  rail.addEventListener('pointerdown',function(e){
+    if(e.pointerType!=='mouse')return;
+    down=true;moved=false;sx=e.clientX;sl=rail.scrollLeft;
+    rail.classList.add('dragging');
+  });
+  window.addEventListener('pointermove',function(e){
+    if(!down)return;
+    var dx=e.clientX-sx;
+    if(Math.abs(dx)>4)moved=true;
+    rail.scrollLeft=sl-dx;
+  });
+  window.addEventListener('pointerup',function(){ down=false; rail.classList.remove('dragging'); });
+  rail.addEventListener('click',function(e){ if(moved){e.preventDefault();e.stopPropagation();} },true);
+})();
+/* звук героя */
+(function(){
+  var btn = document.getElementById('hero-sound');
+  var vid = document.querySelector('.hero video');
+  if (!btn || !vid) return;
+  btn.addEventListener('click', function(){
+    vid.muted = !vid.muted;
+    btn.classList.toggle('on', !vid.muted);
+    btn.setAttribute('aria-pressed', String(!vid.muted));
+    if (!vid.muted) vid.play().catch(function(){});
+  });
+})();
+/* --- модалка записи --- */
+(function(){
+  var modal=document.getElementById('zapis');
+  if(!modal)return;
+  var name=document.getElementById('zap-name');
+  var phone=document.getElementById('zap-phone');
+  function open(e){ if(e)e.preventDefault(); modal.classList.add('open'); document.body.classList.add('modal-open'); if(phone)phone.focus(); }
+  function close(){ modal.classList.remove('open'); document.body.classList.remove('modal-open'); }
+  document.querySelectorAll('.js-zapis').forEach(function(el){ el.addEventListener('click',open); });
+  modal.querySelectorAll('[data-close]').forEach(function(el){ el.addEventListener('click',close); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape')close(); });
+  document.getElementById('zap-form').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=(name&&name.value||'').trim();
+    var p=(phone&&phone.value||'').trim();
+    var msg='Заявка с сайта UPGRADE. Имя: '+(n||'—')+'. Телефон: '+p+". Хочу записаться на детейлинг/тонировку.";
+    window.open('https://wa.me/79020066777?text='+encodeURIComponent(msg),'_blank','noopener');
+    close();
+  });
+})();
+
+/* --- эф2: асфальт-пол (волны+дым), ошибки интерфейса выводятся в подпись --- */
+(function(){
+  var cv=document.getElementById('floor'), note=document.getElementById('floor-note');
+  try{
+    var ctx=cv.getContext('2d');
+    var img=new Image();
+    img.src=encodeURI('/media/asphalt_base.jpg');
+    var W=0,H=0,SLICE=16,nCols=0;
+    var mouse={x:-9999,y:-9999,px:-9999,py:-9999,in:false};
+    var ripples=[], mvx=0, mvy=0;
+    var t0=performance.now(), lastT=0;
+    function resize(){
+      var dpr=Math.min(window.devicePixelRatio||1,2);
+      var rc=cv.getBoundingClientRect();
+      W=Math.max(1,Math.round(rc.width));H=Math.max(1,Math.round(rc.height));
+      cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      nCols=Math.ceil(W/SLICE);
+    }
+    window.addEventListener('resize',resize);resize();
+    window.addEventListener('mousemove',function(e){mouse.x=e.clientX;mouse.y=e.clientY;mouse.in=true;});
+    window.addEventListener('click',function(e){
+      if (e.target.closest('a,button,summary')) return;
+      ripples.push({x:e.clientX,t0:performance.now()});
+      if(ripples.length>5)ripples.shift();
+      puffs.forEach(function(pf){
+        var dx=pf.x-e.clientX,dy=pf.y-(e.clientY+60);
+        var d=Math.sqrt(dx*dx+dy*dy)||1;
+        var push=1200/(d+140);
+        pf.vx+=dx/d*push*3;pf.vy+=dy/d*push*3-push;
+      });
+    });
+    var puffSprite=null,puffs=[];
+    function makePuff(){
+      var s=document.createElement('canvas');var size=256;s.width=s.height=size;
+      var g=s.getContext('2d');
+      var grad=g.createRadialGradient(size/2,size/2,0,size/2,size/2,size/2);
+      grad.addColorStop(0,'rgba(216,220,225,0.8)');grad.addColorStop(.45,'rgba(198,205,212,0.35)');grad.addColorStop(1,'rgba(186,196,205,0)');
+      g.fillStyle=grad;g.fillRect(0,0,size,size);return s;
+    }
+    function spawnPuff(init){
+      return {x:init?Math.random()*(W+400)-200:-260, y:H*(0.35+Math.random()*0.55), r:200+Math.random()*320,
+        bvx:3+Math.random()*4,bvy:-(0.5+Math.random()*1.4),vx:0,vy:0,a:0.08+Math.random()*0.11,
+        ph:Math.random()*6.3,grow:8+Math.random()*12,rot:Math.random()*6.3};
+    }
+    function frame(now){
+      if (cv.width<50) resize();
+      var t=(now-t0)/1000;
+      var dt=Math.min((now-lastT)/1000,0.05)||0.016;lastT=now;
+      var iw=img.width,ih=img.height;
+      if(!iw||!W){requestAnimationFrame(frame);return;}
+      var scale=Math.max(W/iw,H/ih);
+      var visW=W/scale,visH=H/scale;
+      var sx0=(iw-visW)/2,sy0=(ih-visH)/2;
+      ctx.clearRect(0,0,W,H);
+      for(var r=ripples.length-1;r>=0;r--){ if((now-ripples[r].t0)/1000>2.4)ripples.splice(r,1); }
+      var sliceSrc=visW/nCols;
+      for(var i=0;i<nCols;i++){
+        var colX=i*SLICE,cx=colX+SLICE/2;
+        var dy=Math.sin(cx*0.012+t*0.9)*2.2+Math.sin(cx*0.005-t*0.5)*1.6;
+        var stretch=1;
+        if(mouse.in){
+          var dm=cx-mouse.x;
+          var g=Math.exp(-(dm*dm)/(2*140*140));
+          dy+=Math.sin(dm/46+t*5.2)*10*g;
+          stretch+=g*0.14;
+        }
+        for(var k=0;k<ripples.length;k++){
+          var age=(now-ripples[k].t0)/1000;
+          var band=cx-ripples[k].x-age*340;
+          var env=Math.exp(-Math.abs(band)/90)*Math.max(0,1-age/2.4);
+          dy+=Math.sin(band*0.05)*14*env;
+          stretch+=env*0.08;
+        }
+        var extra=stretch-1,drawH=H*stretch;
+        ctx.drawImage(img,sx0+i*sliceSrc,sy0,sliceSrc+0.5,visH,colX,dy-(H*extra)/2,SLICE+0.7,drawH);
+      }
+      if(!puffSprite)puffSprite=makePuff();
+      while(puffs.length<14)puffs.push(spawnPuff(puffs.length<9));
+      if(mouse.in&&mouse.px>-9000&&dt>0){
+        var ivx=Math.max(-4000,Math.min(4000,(mouse.x-mouse.px)/dt));
+        var ivy=Math.max(-4000,Math.min(4000,(mouse.y-mouse.py)/dt));
+        mvx+=(ivx-mvx)*0.35;mvy+=(ivy-mvy)*0.35;
+      }else{mvx*=0.9;mvy*=0.9;}
+      mouse.px=mouse.x;mouse.py=mouse.y;
+      ctx.globalCompositeOperation='screen';
+      var mspeed=Math.sqrt(mvx*mvx+mvy*mvy);
+      for(var p=0;p<puffs.length;p++){
+        var pf=puffs[p];
+        var ddx=pf.x-mouse.x,ddy=pf.y-mouse.y;
+        var g=mouse.in?Math.exp(-(ddx*ddx+ddy*ddy)/(2*160*160)):0;
+        var swirl=Math.sin(t*2.8+pf.ph);
+        pf.vx+=(mvx*g*2.2+(-mvy*swirl*0.9)*g)*dt;
+        pf.vy+=(mvy*g*2.2+(mvx*swirl*0.9)*g)*dt;
+        pf.vx+=(pf.bvx-pf.vx)*dt*1.2;
+        pf.vy+=(pf.bvy-pf.vy)*dt*1.2;
+        pf.x+=pf.vx*dt;pf.y+=pf.vy*dt;pf.r+=pf.grow*dt;
+        pf.rot+=(Math.sin(t*1.7+pf.ph)*0.15+mvx*g*0.00004)*dt;
+        if(pf.x-pf.r>W+120){pf.x=-pf.r*0.4;pf.y=H*(0.35+Math.random()*0.5);pf.r=200+Math.random()*320;pf.vx=pf.vy=0;}
+        if(pf.y+pf.r<-80)pf.y=H+pf.r*0.5;
+        if(pf.y-pf.r>H+120)pf.y=-pf.r*0.3;
+        var pulse=0.78+0.22*Math.sin(t*0.7+pf.ph);
+        var billow=g*Math.min(mspeed*0.00016,0.5);
+        ctx.globalAlpha=Math.min(pf.a*pulse+billow,0.45);
+        var rr=pf.r*(1+billow*0.9);
+        ctx.save();ctx.translate(pf.x,pf.y);ctx.rotate(pf.rot);
+        ctx.scale(rr/128,rr*0.62/128);ctx.drawImage(puffSprite,-128,-128);ctx.restore();
+      }
+      ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';
+      requestAnimationFrame(frame);
+    }
+    img.decode?img.decode().then(function(){requestAnimationFrame(frame);}).catch(function(){requestAnimationFrame(frame);})
+              :(img.onload=function(){requestAnimationFrame(frame);});
+  }catch(e){
+    if(note) note.textContent='ЭФ2 ОШИБКА: '+e.message;
+  }
+})();
+</script>
 </body>
 </html>
