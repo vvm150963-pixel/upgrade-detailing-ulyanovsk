@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPGRADE · студия детейлинга и тонировки, Ульяновск</title>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0c;          /* угольный карбон */
+  --panel:#101014;       /* тон колонки */
+  --surface:#17171c;
+  --line:#26262d;
+  --ink:#f2f2f0;
+  --muted:#9aa0a8;
+  --granat:#b3122b;      /* гранат */
+  --granat-hi:#e6203a;   /* яркий неон-гранат */
+  --col:300px;           /* левая колонка */
+  --m:36px;
+  --step-small:clamp(0.8125rem,0.79rem + 0.1vw,0.875rem);
+  --step-body:clamp(1rem,0.95rem + 0.2vw,1.125rem);
+  --step-lead:clamp(1.2rem,1.05rem + 0.6vw,1.5rem);
+  --step-head:clamp(2.6rem,1.4rem + 4.4vw,5.2rem);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Switzer',system-ui,sans-serif;font-size:var(--step-body);line-height:1.55;-webkit-font-smoothing:antialiased}
+::selection{background:var(--granat);color:#fff}
+img{display:block;max-width:100%}
+a{color:inherit}
+
+/* --- карбоновое плетение (фон колонки и подложки) --- */
+.carbon{
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.035) 0 25%,transparent 25% 50%,rgba(255,255,255,.035) 50% 75%,transparent 75%),
+    linear-gradient(45deg,rgba(0,0,0,.5) 0 25%,transparent 25% 50%,rgba(0,0,0,.5) 50% 75%,transparent 75%),
+    var(--panel);
+  background-size:8px 8px,8px 8px,auto;
+}
+
+/* --- левая колонка --- */
+aside.menu{position:fixed;inset:0 auto 0 0;width:var(--col);display:flex;flex-direction:column;z-index:10;border-right:1px solid var(--line)}
+.menu-logo{display:block;padding:0 0 18px}
+.menu-logo img{width:100%;height:auto;object-fit:cover}
+.menu nav{display:flex;flex-direction:column;gap:10px;padding:6px 22px}
+.menu nav a{
+  display:flex;align-items:center;gap:12px;text-decoration:none;font-size:.95rem;font-weight:500;
+  color:var(--ink);background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:999px;padding:13px 20px;
+  transition:border-color .2s,background .2s,color .2s;
+}
+.menu nav a svg{flex:0 0 16px;stroke:var(--muted);transition:stroke .2s}
+.menu nav a:hover{border-color:var(--granat);background:rgba(179,18,43,.12)}
+.menu nav a:hover svg{stroke:var(--granat-hi)}
+.menu nav a.cta{background:var(--granat);border-color:var(--granat)}
+.menu nav a.cta svg{stroke:#fff}
+.menu nav a.cta:hover{background:var(--granat-hi);border-color:var(--granat-hi)}
+.menu-foot{margin-top:auto;padding:22px;border-top:1px solid var(--line);font-size:var(--step-small);color:var(--muted)}
+.menu-foot .tel{display:block;text-decoration:none;color:var(--ink);font-weight:600;font-size:1.05rem;letter-spacing:-.01em;margin-bottom:10px}
+.menu-foot .tel:hover{color:var(--granat-hi)}
+.menu-foot div{line-height:1.5}
+.menu-foot div+div{margin-top:6px}
+
+/* --- сцена справа --- */
+.stage{margin-left:var(--col)}
+
+/* --- герой --- */
+.hero{position:relative;min-height:100svh;overflow:hidden;display:flex;align-items:flex-end}
+.hero .bg{position:absolute;inset:0}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(1.14) saturate(1.18)}
+.hero .poster{background:url(assets/hero-poster.jpg) center/cover no-repeat}
+.hero .shade{position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(10,10,12,.88) 0%,rgba(10,10,12,.55) 38%,rgba(10,10,12,.12) 70%,rgba(10,10,12,.35) 100%),
+  linear-gradient(0deg,rgba(10,10,12,.92) 0%,transparent 34%),
+  linear-gradient(180deg,rgba(10,10,12,.55) 0%,transparent 22%)}
+.hero .shade::after{content:"";position:absolute;inset:auto 0 0 0;height:34%;background:radial-gradient(60% 100% at 62% 100%,rgba(179,18,43,.28),transparent 70%)}
+.hero-in{position:relative;width:100%;padding:120px var(--m) 150px;max-width:1100px}
+.hero h1{font-size:var(--step-head);font-weight:600;letter-spacing:-.045em;line-height:.99;max-width:12ch}
+.hero h1 em{font-style:normal;color:var(--granat-hi);text-shadow:0 0 34px rgba(230,32,58,.45)}
+.hero p.lead{max-width:32em;color:#cdd2d8;margin-top:26px;font-size:var(--step-lead);line-height:1.45}
+.lead b{color:var(--ink);font-weight:500}
+.cta-row{margin-top:36px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;background:var(--granat);color:#fff;font-weight:500;border-radius:999px;padding:16px 34px;font-size:var(--step-body);transition:background .2s,box-shadow .2s}
+.btn:hover{background:var(--granat-hi);box-shadow:0 6px 30px rgba(179,18,43,.45)}
+.btn.ghost{background:rgba(255,255,255,.06);color:var(--ink);border:1px solid var(--line)}
+.btn.ghost:hover{background:rgba(255,255,255,.1);box-shadow:none;border-color:#3a3a42}
+.rate{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;margin-top:56px}
+.rate .num{font-size:2.4rem;font-weight:600;letter-spacing:-.04em;line-height:1;color:var(--granat-hi)}
+.rate .cap{color:#cdd2d8;max-width:34em;font-size:var(--step-small)}
+.rate .cap b{color:var(--ink);font-weight:500}
+.hero-cap{position:absolute;left:var(--m);bottom:22px;right:110px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:#8d939b;font-size:.78rem}
+.hero-sound{position:absolute;top:24px;right:var(--m);z-index:3;width:48px;height:48px;border-radius:50%;background:var(--granat);border:1px solid var(--granat);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,box-shadow .2s}
+.hero-sound:hover{background:var(--granat-hi);box-shadow:0 0 24px rgba(179,18,43,.5)}
+.hero-sound.on{background:var(--granat-hi);box-shadow:0 0 26px rgba(230,32,58,.55)}
+.hero-sound .ic-on{display:none}
+.hero-sound.on .ic-on{display:block}
+.hero-sound.on .ic-off{display:none}
+
+/* появление */
+.rise{opacity:0;transform:translateY(22px)}
+.rise.on{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
+.rise.on:nth-child(2){transition-delay:.1s}
+.rise.on:nth-child(3){transition-delay:.2s}
+.rise.on:nth-child(4){transition-delay:.3s}
+@media (prefers-reduced-motion: reduce){.rise{opacity:1;transform:none}.rise.on{transition:none}.hero video{display:none}}
+
+/* --- телефон: колонка сверху, герой ниже --- */
+@media (max-width:920px){
+  :root{--m:20px}
+  aside.menu{position:static;width:100%;flex-direction:column;border-right:none;border-bottom:1px solid var(--line)}
+  .menu nav{flex-direction:row;overflow-x:auto;padding:12px 16px;gap:8px;scrollbar-width:none}
+  .menu nav::-webkit-scrollbar{display:none}
+  .menu nav a{white-space:nowrap;padding:10px 18px;font-size:.9rem}
+  .menu-foot{display:flex;gap:18px;justify-content:space-between;flex-wrap:wrap;margin-top:0}
+  .menu-foot .tel{margin-bottom:0}
+  .menu-foot div+div{margin-top:0}
+  .stage{margin-left:0}
+  .hero video,.hero .poster{object-position:100% 50%}
+  .hero{min-height:82svh}
+  .hero .shade{background:
+    linear-gradient(0deg,rgba(10,10,12,.97) 0%,rgba(10,10,12,.82) 40%,rgba(10,10,12,.5) 72%,rgba(10,10,12,.32) 100%),
+    linear-gradient(90deg,rgba(10,10,12,.55),rgba(10,10,12,.55))}
+  .hero-in{padding:72px var(--m) 130px}
+  .hero h1{font-size:clamp(2.4rem,11vw,3.6rem)}
+  .hero-cap{position:static;margin-top:26px}
+}
+</style>
+</head>
+<body>
+
+<aside class="menu carbon">
+  <a class="menu-logo" href="#" aria-label="UPGRADE Detailing studio">
+    <img src="assets/logo-granat.jpg" alt="UPGRADE Detailing studio" width="2752" height="1536">
+  </a>
+  <nav aria-label="Разделы сайта">
+    <a href="#uslugi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 2.5h11v11h-11z"/></svg> Услуги и цены</a>
+    <a href="#raboty"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M2 12l4-8 3 5 2-3 3 6z"/></svg> Работы до/после</a>
+    <a href="#otzyvy"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 3h11v7h-6l-3 3v-3h-2z"/></svg> Отзывы</a>
+    <a href="tel:+79020066777" class="cta"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M3 2.5h3l1 3-1.7 1.2a9 9 0 0 0 4 4L10.5 9l3 1v3a1 1 0 0 1-1.1 1A11.5 11.5 0 0 1 2 3.6a1 1 0 0 1 1-1.1z"/></svg> Записаться</a>
+    <a href="#kontakty"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M8 14s5-4.2 5-8a5 5 0 0 0-10 0c0 3.8 5 8 5 8z"/><circle cx="8" cy="6" r="1.6"/></svg> Контакты</a>
+  </nav>
+  <div class="menu-foot">
+    <a class="tel" href="tel:+79020066777">+7 902 006-67-77</a>
+    <div>Ульяновск, пр-т Туполева, 7В<br>(точное здание сверяем — 7В или 7Б)</div>
+    <div>Ежедневно с 9:00 до 20:00</div>
+  </div>
+</aside>
+
+<main class="stage">
+
+  <section class="hero">
+    <div class="bg" aria-hidden="true">
+      <video autoplay muted loop playsinline preload="metadata" poster="assets/hero-upg-poster.jpg">
+        <source src="assets/hero-upg.mp4" type="video/mp4">
+      </video>
+      <div class="shade"></div>
+    </div>
+    <button class="hero-sound" id="hero-sound" type="button" aria-pressed="false" aria-label="Включить звук">
+      <svg class="ic-off" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3 8v4h3l4 3.5v-11L6 8H3z"/><line x1="13.5" y1="8" x2="17.5" y2="12"/><line x1="17.5" y1="8" x2="13.5" y2="12"/>
+      </svg>
+      <svg class="ic-on" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3 8v4h3l4 3.5v-11L6 8H3z"/><path d="M13.5 7.5a4 4 0 0 1 0 5"/><path d="M15.8 5.5a7 7 0 0 1 0 9"/>
+      </svg>
+    </button>
+    <div class="hero-in">
+      <h1 class="rise on">Возвращаем чувство <em>новизны</em></h1>
+      <p class="lead rise on">Студия <b>тонировки и детейлинга в Ульяновске</b>. Полировка кузова, керамическое покрытие, оклейка плёнкой, автосвет, химчистка салона.</p>
+      <div class="cta-row rise on">
+        <a class="btn" href="tel:+79020066777">Записаться: +7 902 006-67-77</a>
+        <a class="btn ghost" href="#uslugi">Смотреть цены</a>
+      </div>
+      <div class="rate rise on">
+        <div class="num">5,0</div>
+        <div class="cap"><b>158 оценок, премия 2ГИС.</b> 149 отзывов от клиентов студии. Работаем по записи, ежедневно с 9:00.</div>
+      </div>
+    </div>
+    <p class="hero-cap">
+      <span>Атмосферное кино (CGI-сцена), не съёмка процесса. Реальные работы студии — ниже.</span>
+      <span>UPGRADE · Ульяновск</span>
+    </p>
+  </section>
+
+</main>
+<script>
+(function(){
+  var io;
+  try {
+    io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} });
+    },{threshold:.12});
+  } catch(e) { return; }
+  document.querySelectorAll('.hero-in > *').forEach(function(el){ io.observe(el); });
+})();
+(function(){
+  var btn = document.getElementById('hero-sound') || document.querySelector('.hero-sound');
+  var vid = document.querySelector('.hero video');
+  if (!btn || !vid) return;
+  btn.addEventListener('click', function(){
+    vid.muted = !vid.muted;
+    btn.classList.toggle('on', !vid.muted);
+    btn.setAttribute('aria-pressed', String(!vid.muted));
+    btn.setAttribute('aria-label', vid.muted ? 'Включить звук' : 'Выключить звук');
+    if (!vid.muted) vid.play().catch(function(){});
+  });
+})();
+</script>
+</body>
+</html>

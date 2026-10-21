@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPGRADE · конфигуратор плёнки — эскиз</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --granat:#b3122b;--granat-hi:#e6203a;
+  --ink:#f2f2f0;--muted:#9aa0a8;--line:#26262d;
+  --disp:'Sofia Sans Extra Condensed',sans-serif;--body:'Inter',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:#070708;color:var(--ink);font-family:var(--body);overflow:hidden}
+#scene{position:fixed;inset:0;display:block}
+.cap{position:fixed;left:24px;top:20px;z-index:2;pointer-events:none;text-shadow:0 2px 10px rgba(0,0,0,.8)}
+.cap h1{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:clamp(1.6rem,1rem + 2vw,2.6rem);line-height:.95;letter-spacing:.01em}
+.cap p{color:var(--muted);font-size:.85rem;margin-top:8px;max-width:34em;text-shadow:0 1px 8px rgba(0,0,0,.9)}
+.panel{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:3;
+  background:rgba(12,12,15,.88);border:1px solid var(--line);padding:16px 22px 14px;
+  display:flex;flex-direction:column;gap:10px;min-width:min(720px,92vw);backdrop-filter:blur(6px)}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.row .lbl{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+.dot{width:34px;height:34px;border-radius:50%;border:2px solid transparent;cursor:pointer;position:relative;flex:0 0 auto;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18), 0 2px 8px rgba(0,0,0,.5);transition:transform .15s}
+.dot:hover{transform:scale(1.12)}
+.dot.on{border-color:var(--granat-hi)}
+.dot .nm{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#0d0d10;border:1px solid var(--line);padding:5px 10px;font-size:.72rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s}
+.dot:hover .nm{opacity:1}
+.fin{display:flex;gap:6px}
+.fin button{background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--ink);font:inherit;font-size:.8rem;padding:9px 16px;cursor:pointer;letter-spacing:.04em}
+.fin button:hover{border-color:var(--granat)}
+.fin button.on{border-color:var(--granat-hi);color:var(--granat-hi)}
+.hint{color:#6f757d;font-size:.72rem}
+.stage-note{position:fixed;right:22px;top:20px;z-index:2;color:#6f757d;font-size:.72rem;text-shadow:0 1px 8px rgba(0,0,0,.9)}
+.load{position:fixed;inset:0;z-index:9;display:flex;align-items:center;justify-content:center;background:#070708;font-family:var(--disp);font-size:1.4rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);transition:opacity .5s}
+.load.off{opacity:0;pointer-events:none}
+.err{color:var(--granat-hi);font-family:var(--body);font-size:.9rem;max-width:40em;text-align:center;line-height:1.6}
+.price-tag{position:fixed;right:24px;bottom:26px;z-index:2;background:rgba(12,12,15,.88);border:1px solid var(--line);padding:14px 20px;text-align:right}
+.price-tag .v{font-family:var(--disp);font-weight:800;font-size:1.7rem;color:var(--ink)}
+.price-tag .k{color:var(--muted);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+</style>
+</head>
+<body>
+<canvas id="scene"></canvas>
+<div class="cap">
+  <h1>Выбери свою <span style="color:var(--granat-hi)">плёнку</span></h1>
+  <p>Крути мышкой — машина живая. Цвет и фактура меняются мгновенно: так оклейка выглядит на твоём авто ещё до визита.</p>
+</div>
+<div class="stage-note">UPGRADE · эскиз конфигуратора оклейки · эф3</div>
+<div class="panel">
+  <div class="row" id="colors"><span class="lbl">Плёнка</span></div>
+  <div class="row">
+    <span class="lbl">Фактура</span>
+    <div class="fin" id="finish">
+      <button data-fin="gloss" class="on">Глянец</button>
+      <button data-fin="mat">Мат</button>
+      <button data-fin="chrome">Хром</button>
+    </div>
+    <span class="hint" style="margin-left:auto">машина — демо-модель, на своей покрасим также</span>
+  </div>
+</div>
+<div class="price-tag"><div class="k">Оклейка кузова</div><div class="v">от 2 000 ₽</div></div>
+<div class="load" id="load"><div>Грузим сцену…<br><span class="err" id="err"></span></div></div>
+
+<script type="importmap">
+{"imports":{
+  "three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+
+const errBox = document.getElementById('err');
+try{
+  const canvas = document.getElementById('scene');
+  const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:false});
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  renderer.setSize(innerWidth, innerHeight);
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.15;
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x070708);
+  scene.fog = new THREE.Fog(0x070708, 14, 30);
+
+  const camera = new THREE.PerspectiveCamera(38, innerWidth/innerHeight, .1, 100);
+  camera.position.set(4.6, 1.55, 5.4);
+
+  const controls = new OrbitControls(camera, canvas);
+  controls.target.set(0, .55, 0);
+  controls.enableDamping = true;
+  controls.minDistance = 3.2; controls.maxDistance = 9;
+  controls.maxPolarAngle = Math.PI*0.495 - 0.03;
+  controls.autoRotate = true; controls.autoRotateSpeed = 0.7;
+  canvas.addEventListener('pointerdown', ()=> controls.autoRotate = false);
+
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  // процедурная «фотостудия»: чёрный бокс + длинные софтбокс-полосы → честные блики автожурнала
+  function makeStudioEnv(){
+    const es = new THREE.Scene();
+    es.background = new THREE.Color(0x020203);
+    const strip = (w,h,x,y,z,ry,int)=> {
+      const m = new THREE.Mesh(new THREE.PlaneGeometry(w,h),
+        new THREE.MeshBasicMaterial({color:new THREE.Color().setScalar(int)}));
+      m.position.set(x,y,z); m.rotation.y=ry; es.add(m);
+    };
+    strip(9, 1.6,  0, 4.2, -3.4, 0,  5.5);   // верхняя длинная лобовая
+    strip(9, 1.2,  0, 3.6,  3.6, Math.PI, 3.2); // задняя
+    strip(1.2, 5, -5.2, 2.2, 0,  Math.PI/2, 2.2); // боковая левая
+    strip(1.2, 5,  5.2, 2.2, 0, -Math.PI/2, 1.4); // боковая правая (слабее)
+    strip(3, 3, 0, 6.5, 0, Math.PI, 1.0);        // верхний залив
+    return pmrem.fromScene(es, .04).texture;
+  }
+  scene.environment = makeStudioEnv();
+
+  const key = new THREE.SpotLight(0xffffff, 480, 40, .6, .55, 1.6);
+  key.position.set(4.5, 9, 3.5);
+  key.castShadow = true;
+  key.shadow.mapSize.set(2048, 2048);
+  key.shadow.bias = -0.0004;
+  key.shadow.radius = 4;
+  scene.add(key);
+  const warm = new THREE.PointLight(0xb3122b, 18, 16);
+  warm.position.set(-4, 2.5, -2); scene.add(warm);
+
+  // пол с мягким пятном
+  const c = document.createElement('canvas'); c.width = c.height = 512;
+  const g = c.getContext('2d');
+  const rg = g.createRadialGradient(256,256,20,256,256,250);
+  rg.addColorStop(0,'rgba(34,34,38,1)'); rg.addColorStop(.55,'rgba(16,16,19,1)'); rg.addColorStop(1,'rgba(7,7,8,1)');
+  g.fillStyle = rg; g.fillRect(0,0,512,512);
+  const floorTex = new THREE.CanvasTexture(c);
+  const floor = new THREE.Mesh(new THREE.CircleGeometry(9, 48),
+    new THREE.MeshStandardMaterial({map:floorTex, roughness:.9, metalness:0}));
+  floor.rotation.x = -Math.PI/2; floor.position.y = -.01; floor.receiveShadow = true; scene.add(floor);
+
+  // кольцо-подиум в фирстиле
+  const ring = new THREE.Mesh(
+    new THREE.TorusGeometry(2.6, .015, 12, 90),
+    new THREE.MeshBasicMaterial({color:0xb3122b})
+  );
+  ring.rotation.x = -Math.PI/2; ring.position.y = .012; scene.add(ring);
+
+  const bodyMat = new THREE.MeshPhysicalMaterial({color:0xb3122b, metalness:.9, roughness:.35, clearcoat:1, clearcoatRoughness:.08});
+  const glassMat = new THREE.MeshPhysicalMaterial({color:0x09090c, metalness:0, roughness:.03, transparent:true, opacity:.94, envMapIntensity:1.2});
+  const detailMat = new THREE.MeshStandardMaterial({color:0x101013, metalness:.85, roughness:.3, envMapIntensity:.7});
+
+  const draco = new DRACOLoader();
+  draco.setDecoderPath('https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/libs/draco/gltf/');
+  const gltfLoader = new GLTFLoader();
+  gltfLoader.setDRACOLoader(draco);
+  gltfLoader.load(
+    'https://cdn.jsdelivr.net/gh/mrdoob/three.js@r160/examples/models/gltf/ferrari.glb',
+    (gltf)=>{
+      const car = gltf.scene.children[0];
+      car.getObjectByName('body').material = bodyMat;
+      car.getObjectByName('glass').material = glassMat;
+      ['rim_fl','rim_fr','rim_rl','rim_rr','trim'].forEach(n=>{ const o=car.getObjectByName(n); if(o)o.material=detailMat; });
+      car.rotation.y = -.4;
+      car.traverse(o=>{ if(o.isMesh){ o.castShadow = true; o.receiveShadow = false; } });
+      scene.add(car);
+      document.getElementById('load').classList.add('off');
+    },
+    undefined,
+    (e)=>{ errBox.textContent = 'Модель не загрузилась: ' + (e && e.message || 'сеть'); }
+  );
+
+  const COLORS = [
+    {n:'Гранат',     hex:0x9e0f24},
+    {n:'Чёрный глянец', hex:0x0b0b0d},
+    {n:'Белый перламутр', hex:0xe9eaea},
+    {n:'Графит',     hex:0x3a3d42},
+    {n:'Серебро',    hex:0xb9bdc2},
+    {n:'Сапфир',     hex:0x17325c},
+    {n:'Изумруд',    hex:0x0e3c33},
+    {n:'Бронза',     hex:0x8a5a2e}
+  ];
+  const wrap = document.getElementById('colors');
+  const dots = COLORS.map((c,i)=>{
+    const d = document.createElement('button');
+    d.className = 'dot' + (i===0?' on':'');
+    d.style.background = '#'+c.hex.toString(16).padStart(6,'0');
+    d.innerHTML = '<span class="nm">'+c.n+'</span>';
+    d.onclick = ()=>{ bodyMat.color.setHex(c.hex); wrap.querySelectorAll('.dot').forEach(x=>x.classList.remove('on')); d.classList.add('on'); };
+    wrap.appendChild(d);
+    return d;
+  });
+
+  const setFinish = (f)=>{
+    if(f==='gloss'){ bodyMat.roughness=.32; bodyMat.metalness=.9;  bodyMat.clearcoat=1;   bodyMat.clearcoatRoughness=.06; }
+    if(f==='mat'){  bodyMat.roughness=.62; bodyMat.metalness=.35;  bodyMat.clearcoat=0;  bodyMat.clearcoatRoughness=.5; }
+    if(f==='chrome'){bodyMat.roughness=.05; bodyMat.metalness=1;  bodyMat.clearcoat=0;  bodyMat.clearcoatRoughness=0; }
+  };
+  document.querySelectorAll('#finish button').forEach(b=>{
+    b.onclick = ()=>{
+      document.querySelectorAll('#finish button').forEach(x=>x.classList.remove('on'));
+      b.classList.add('on');
+      setFinish(b.dataset.fin);
+    };
+  });
+
+  addEventListener('resize', ()=>{
+    camera.aspect = innerWidth/innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(innerWidth, innerHeight);
+  });
+
+  (function loop(){
+    requestAnimationFrame(loop);
+    controls.update();
+    renderer.render(scene, camera);
+  })();
+}catch(e){
+  errBox.textContent = 'Ошибка сцены: ' + e.message;
+  document.getElementById('load').classList.remove('off');
+}
+</script>
+</body>
+</html>

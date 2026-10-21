@@ -1,0 +1,2251 @@
+{
+ "url": "D:\\Z GR\\Апгрейд\\страница-А\\index.html",
+ "at": "2026-10-19T12:18:28.169Z",
+ "allow": [
+  "palette-terracotta"
+ ],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 10,
+   "filled": [
+    0.33,
+    0.43,
+    1,
+    0.65,
+    0.86,
+    0.78,
+    0.61,
+    0.56,
+    0.26,
+    0.29
+   ],
+   "motion": {
+    "elements": 10,
+    "css": 1,
+    "transitions": 9,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 8314,
+     "screens": 9.2,
+     "words": 591,
+     "img": 5,
+     "video": 0,
+     "canvas": 0,
+     "svg": 1,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 5,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "vk-2.jpg",
+      "vk-1.jpg",
+      "vk-3.jpg",
+      "vk-6.jpg",
+      "vk-2.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Возвращаем чувство новизны",
+     "words": 3,
+     "chars": 26,
+     "lines": 2,
+     "size": 87,
+     "vw": 6,
+     "font": "Switzer",
+     "weight": 600,
+     "tracking": -0.045,
+     "leading": 0.98,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.38,
+     "top": 253,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Возвращаем чувство новизны",
+     "words": 3,
+     "lines": 2,
+     "size": 87,
+     "font": "Switzer"
+    },
+    "headings": [
+     {
+      "text": "Возвращаем чувство новизны",
+      "words": 3,
+      "chars": 26,
+      "lines": 2,
+      "size": 87,
+      "vw": 6,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.045,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.38,
+      "top": 253,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "5,0",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 87,
+      "vw": 6,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.08,
+      "top": 1434,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "Что мы сделаем для вашего авто",
+      "words": 6,
+      "chars": 30,
+      "lines": 2,
+      "size": 49.6,
+      "vw": 3.4,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.46,
+      "top": 1891,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Матовая оклейка Mercedes-AMG",
+      "words": 3,
+      "chars": 28,
+      "lines": 2,
+      "size": 49.6,
+      "vw": 3.4,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.46,
+      "top": 2922,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Цены из нашей карточки 2ГИС",
+      "words": 5,
+      "chars": 27,
+      "lines": 2,
+      "size": 49.6,
+      "vw": 3.4,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.46,
+      "top": 4907,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Что пишут в 2ГИС",
+      "words": 4,
+      "chars": 16,
+      "lines": 1,
+      "size": 49.6,
+      "vw": 3.4,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.46,
+      "top": 5884,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Подарочный сертификат",
+      "words": 2,
+      "chars": 21,
+      "lines": 1,
+      "size": 49.6,
+      "vw": 3.4,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.91,
+      "top": 6678,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Записаться на удобное время",
+      "words": 4,
+      "chars": 27,
+      "lines": 1,
+      "size": 49.6,
+      "vw": 3.4,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.46,
+      "top": 7421,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "+7 902 006-67-77",
+      "words": 3,
+      "chars": 16,
+      "lines": 1,
+      "size": 49.6,
+      "vw": 3.4,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.26,
+      "top": 7545,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "UPGRADE",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 194.4,
+      "vw": 13.5,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 0.9,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 8009,
+      "tag": "div",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 10,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Switzer",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      13,
+      14,
+      19,
+      20,
+      26,
+      50,
+      87,
+      194
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "Switzer",
+      "size": 19,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 8.4
+     },
+     "measureChars": 60,
+     "max": {
+      "size": 194.4,
+      "vw": 13.5,
+      "font": "Switzer",
+      "text": "UPGRADE"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#101114",
+     "bodyBgHsl": {
+      "h": 225,
+      "s": 0.11,
+      "l": 0.07
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#17181c",
+       "top": 1807,
+       "hsl": {
+        "h": 228,
+        "s": 0.1,
+        "l": 0.1
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#a8aeb4",
+       "share": 0.55
+      },
+      {
+       "color": "#f4f4f1",
+       "share": 0.4
+      },
+      {
+       "color": "#d9a876",
+       "share": 0.03
+      },
+      {
+       "color": "#141414",
+       "share": 0.01
+      },
+      {
+       "color": "#6f737b",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#1d1f24",
+      "hsl": {
+       "h": 223,
+       "s": 0.11,
+       "l": 0.13
+      },
+      "fg": "#f4f4f1"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 7,
+     "inHero": 3,
+     "radius": "pill",
+     "height": 55,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "+7 902 006-67-77",
+      "Записаться: +7 902 006-67-77",
+      "Что делаем"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 2,
+     "boxRadius": 99,
+     "squareMedia": 4,
+     "roundedMedia": 1,
+     "mediaRadius": 999,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 5999
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.33
+     }
+    ],
+    "nav": {
+     "links": 8,
+     "fixed": false,
+     "height": 93,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "switzer"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 8314,
+    "margins": {
+     "left": 32,
+     "right": 32
+    },
+    "sections": [
+     {
+      "sel": "section.hero",
+      "tag": "section",
+      "top": 253,
+      "height": 1394,
+      "words": 54,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Студия",
+       "size": 26,
+       "tag": "p"
+      },
+      "left": 32,
+      "right": 32,
+      "textLeft": 32,
+      "textRight": 560,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#uslugi.band",
+      "tag": "section",
+      "top": 1807,
+      "height": 955,
+      "words": 105,
+      "media": 0,
+      "middle": 126,
+      "heading": {
+       "text": "Что мы сделаем для вашего авто",
+       "size": 50,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 229,
+      "textLeft": 32,
+      "textRight": 229,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.work-grid",
+      "tag": "div",
+      "top": 3089,
+      "height": 1341,
+      "words": 0,
+      "media": 4,
+      "middle": 20,
+      "heading": null,
+      "left": 32,
+      "right": 32,
+      "textLeft": null,
+      "textRight": null,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.work-sub",
+      "tag": "div",
+      "top": 4457,
+      "height": 206,
+      "words": 65,
+      "media": 0,
+      "middle": 539,
+      "heading": null,
+      "left": 32,
+      "right": 64,
+      "textLeft": 32,
+      "textRight": 64,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#tseny.band",
+      "tag": "section",
+      "top": 4823,
+      "height": 894,
+      "words": 89,
+      "media": 0,
+      "middle": 113,
+      "heading": {
+       "text": "Цены из нашей карточки 2ГИС",
+       "size": 50,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 32,
+      "textLeft": 32,
+      "textRight": 32,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#otzyvy",
+      "tag": "section",
+      "top": 5876,
+      "height": 505,
+      "words": 123,
+      "media": 0,
+      "middle": 91,
+      "heading": {
+       "text": "Что пишут в 2ГИС",
+       "size": 50,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 91,
+      "textLeft": 32,
+      "textRight": 91,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#sertifikat.cert",
+      "tag": "section",
+      "top": 6582,
+      "height": 643,
+      "words": 58,
+      "media": 0,
+      "middle": 110,
+      "heading": {
+       "text": "Подарочный сертификат",
+       "size": 50,
+       "tag": "h2"
+      },
+      "left": 64,
+      "right": 104,
+      "textLeft": 64,
+      "textRight": 130,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#kontakty",
+      "tag": "section",
+      "top": 7384,
+      "height": 455,
+      "words": 68,
+      "media": 0,
+      "middle": 64,
+      "heading": {
+       "text": "Записаться на удобное время",
+       "size": 50,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 32,
+      "textLeft": 32,
+      "textRight": 32,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer",
+      "tag": "footer",
+      "top": 8009,
+      "height": 305,
+      "words": 28,
+      "media": 0,
+      "middle": 100,
+      "heading": null,
+      "left": 32,
+      "right": 32,
+      "textLeft": 32,
+      "textRight": 32,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [
+     {
+      "top": 1544,
+      "height": 340
+     },
+     {
+      "top": 5604,
+      "height": 272
+     },
+     {
+      "top": 6352,
+      "height": 320
+     }
+    ],
+    "h1s": [
+     {
+      "text": "Возвращаем чувство новизны",
+      "size": 87,
+      "top": 253,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 32,
+      "n": 13
+     },
+     {
+      "x": 752,
+      "n": 7
+     },
+     {
+      "x": 64,
+      "n": 4
+     },
+     {
+      "x": 764,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 25,
+    "bodySize": 19,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.18,
+    "voidBox": {
+     "x": 900,
+     "y": 120,
+     "w": 540,
+     "h": 420
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 9,
+   "filled": [
+    0.45,
+    0.57,
+    0.73,
+    0.55,
+    0.93,
+    0.54,
+    0.59,
+    0.13,
+    0.08
+   ],
+   "motion": {
+    "elements": 10,
+    "css": 1,
+    "transitions": 9,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 8200,
+     "screens": 8,
+     "words": 591,
+     "img": 5,
+     "video": 0,
+     "canvas": 0,
+     "svg": 1,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 5,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "vk-2.jpg",
+      "vk-1.jpg",
+      "vk-3.jpg",
+      "vk-6.jpg",
+      "vk-2.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Возвращаем чувство новизны",
+     "words": 3,
+     "chars": 26,
+     "lines": 2,
+     "size": 56.1,
+     "vw": 7.3,
+     "font": "Switzer",
+     "weight": 600,
+     "tracking": -0.045,
+     "leading": 0.98,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.46,
+     "top": 363,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Возвращаем чувство новизны",
+     "words": 3,
+     "lines": 2,
+     "size": 56.1,
+     "font": "Switzer"
+    },
+    "headings": [
+     {
+      "text": "Возвращаем чувство новизны",
+      "words": 3,
+      "chars": 26,
+      "lines": 2,
+      "size": 56.1,
+      "vw": 7.3,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.045,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.46,
+      "top": 363,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "5,0",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 56.1,
+      "vw": 7.3,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.09,
+      "top": 1217,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "Что мы сделаем для вашего авто",
+      "words": 6,
+      "chars": 30,
+      "lines": 1,
+      "size": 36.7,
+      "vw": 4.8,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1644,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Матовая оклейка Mercedes-AMG",
+      "words": 3,
+      "chars": 28,
+      "lines": 1,
+      "size": 36.7,
+      "vw": 4.8,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2758,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Цены из нашей карточки 2ГИС",
+      "words": 5,
+      "chars": 27,
+      "lines": 1,
+      "size": 36.7,
+      "vw": 4.8,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 4196,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Что пишут в 2ГИС",
+      "words": 4,
+      "chars": 16,
+      "lines": 1,
+      "size": 36.7,
+      "vw": 4.8,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 5189,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Подарочный сертификат",
+      "words": 2,
+      "chars": 21,
+      "lines": 1,
+      "size": 36.7,
+      "vw": 4.8,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.83,
+      "top": 6200,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Записаться на удобное время",
+      "words": 4,
+      "chars": 27,
+      "lines": 1,
+      "size": 36.7,
+      "vw": 4.8,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 7000,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "+7 902 006-67-77",
+      "words": 3,
+      "chars": 16,
+      "lines": 1,
+      "size": 36.7,
+      "vw": 4.8,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.36,
+      "top": 7211,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "UPGRADE",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 103.7,
+      "vw": 13.5,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 0.9,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 7933,
+      "tag": "div",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 10,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Switzer",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      13,
+      18,
+      20,
+      23,
+      37,
+      56,
+      104
+     ],
+     "sizeCount": 7,
+     "notLoaded": [],
+     "body": {
+      "font": "Switzer",
+      "size": 17.9,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 8.4
+     },
+     "measureChars": 60,
+     "max": {
+      "size": 103.7,
+      "vw": 13.5,
+      "font": "Switzer",
+      "text": "UPGRADE"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#101114",
+     "bodyBgHsl": {
+      "h": 225,
+      "s": 0.11,
+      "l": 0.07
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#17181c",
+       "top": 1560,
+       "hsl": {
+        "h": 228,
+        "s": 0.1,
+        "l": 0.1
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#a8aeb4",
+       "share": 0.55
+      },
+      {
+       "color": "#f4f4f1",
+       "share": 0.4
+      },
+      {
+       "color": "#d9a876",
+       "share": 0.03
+      },
+      {
+       "color": "#141414",
+       "share": 0.01
+      },
+      {
+       "color": "#6f737b",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#1d1f24",
+      "hsl": {
+       "h": 223,
+       "s": 0.11,
+       "l": 0.13
+      },
+      "fg": "#f4f4f1"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 7,
+     "inHero": 2,
+     "radius": "pill",
+     "height": 60,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Записаться: +7 902 006-67-77",
+      "Что делаем"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 1,
+     "boxRadius": 99,
+     "squareMedia": 4,
+     "roundedMedia": 1,
+     "mediaRadius": 999,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 5365
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.27
+     }
+    ],
+    "nav": {
+     "links": 8,
+     "fixed": false,
+     "height": 203,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "switzer"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 8200,
+    "margins": {
+     "left": 32,
+     "right": 32
+    },
+    "sections": [
+     {
+      "sel": "header.nav",
+      "tag": "header",
+      "top": 0,
+      "height": 203,
+      "words": 13,
+      "media": 0,
+      "middle": 48,
+      "heading": null,
+      "left": 78,
+      "right": 52,
+      "textLeft": 78,
+      "textRight": 52,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.hero",
+      "tag": "section",
+      "top": 363,
+      "height": 1038,
+      "words": 54,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 32,
+      "right": 32,
+      "textLeft": 32,
+      "textRight": 46,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#uslugi.band",
+      "tag": "section",
+      "top": 1560,
+      "height": 1038,
+      "words": 105,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Что мы сделаем для вашего авто",
+       "size": 37,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 53,
+      "textLeft": 32,
+      "textRight": 53,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#raboty",
+      "tag": "section",
+      "top": 2758,
+      "height": 1194,
+      "words": 84,
+      "media": 4,
+      "middle": 0,
+      "heading": null,
+      "left": 32,
+      "right": 32,
+      "textLeft": 32,
+      "textRight": 208,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#tseny.band",
+      "tag": "section",
+      "top": 4112,
+      "height": 916,
+      "words": 89,
+      "media": 0,
+      "middle": 7,
+      "heading": {
+       "text": "Цены из нашей карточки 2ГИС",
+       "size": 37,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 32,
+      "textLeft": 32,
+      "textRight": 32,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#otzyvy",
+      "tag": "section",
+      "top": 5189,
+      "height": 715,
+      "words": 119,
+      "media": 0,
+      "middle": 9,
+      "heading": null,
+      "left": 32,
+      "right": 75,
+      "textLeft": 32,
+      "textRight": 75,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#sertifikat.cert",
+      "tag": "section",
+      "top": 6104,
+      "height": 736,
+      "words": 58,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Подарочный сертификат",
+       "size": 37,
+       "tag": "h2"
+      },
+      "left": 64,
+      "right": 93,
+      "textLeft": 64,
+      "textRight": 93,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#kontakty",
+      "tag": "section",
+      "top": 7000,
+      "height": 763,
+      "words": 64,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "+7 902 006-67-77",
+       "size": 37,
+       "tag": "a"
+      },
+      "left": 32,
+      "right": 32,
+      "textLeft": 32,
+      "textRight": 32,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer",
+      "tag": "footer",
+      "top": 7933,
+      "height": 267,
+      "words": 28,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 32,
+      "right": 111,
+      "textLeft": 32,
+      "textRight": 111,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [
+     {
+      "top": 1300,
+      "height": 340
+     },
+     {
+      "top": 5872,
+      "height": 320
+     }
+    ],
+    "h1s": [
+     {
+      "text": "Возвращаем чувство новизны",
+      "size": 56,
+      "top": 363,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 32,
+      "n": 16
+     },
+     {
+      "x": 64,
+      "n": 3
+     },
+     {
+      "x": 416,
+      "n": 2
+     },
+     {
+      "x": 428,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 22,
+    "bodySize": 18,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.64,
+    0.53,
+    1,
+    0.93,
+    0.61,
+    0.86,
+    0.72,
+    0.8,
+    0.79,
+    0.78,
+    0.53,
+    0.19
+   ],
+   "motion": {
+    "elements": 10,
+    "css": 1,
+    "transitions": 9,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 393,
+     "h": 851
+    },
+    "page": {
+     "height": 10242,
+     "screens": 12,
+     "words": 585,
+     "img": 5,
+     "video": 0,
+     "canvas": 0,
+     "svg": 1,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 5,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "vk-2.jpg",
+      "vk-1.jpg",
+      "vk-3.jpg",
+      "vk-6.jpg",
+      "vk-2.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Возвращаем чувство новизны",
+     "words": 3,
+     "chars": 26,
+     "lines": 2,
+     "size": 50.7,
+     "vw": 12.9,
+     "font": "Switzer",
+     "weight": 600,
+     "tracking": -0.045,
+     "leading": 0.98,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.89,
+     "top": 237,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Возвращаем чувство новизны",
+     "words": 3,
+     "lines": 2,
+     "size": 50.7,
+     "font": "Switzer"
+    },
+    "headings": [
+     {
+      "text": "Возвращаем чувство новизны",
+      "words": 3,
+      "chars": 26,
+      "lines": 2,
+      "size": 50.7,
+      "vw": 12.9,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.045,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.89,
+      "top": 237,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "5,0",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 38.7,
+      "vw": 9.8,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.13,
+      "top": 1345,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "Что мы сделаем для вашего авто",
+      "words": 6,
+      "chars": 30,
+      "lines": 2,
+      "size": 32,
+      "vw": 8.1,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.89,
+      "top": 1758,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Матовая оклейка Mercedes-AMG",
+      "words": 3,
+      "chars": 28,
+      "lines": 2,
+      "size": 32,
+      "vw": 8.1,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.89,
+      "top": 3443,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Цены из нашей карточки 2ГИС",
+      "words": 5,
+      "chars": 27,
+      "lines": 2,
+      "size": 32,
+      "vw": 8.1,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.89,
+      "top": 5613,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Что пишут в 2ГИС",
+      "words": 4,
+      "chars": 16,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.1,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.89,
+      "top": 6686,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Подарочный сертификат",
+      "words": 2,
+      "chars": 21,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.1,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.89,
+      "top": 8069,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Записаться на удобное время",
+      "words": 4,
+      "chars": 27,
+      "lines": 2,
+      "size": 32,
+      "vw": 8.1,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.89,
+      "top": 8933,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "+7 902 006-67-77",
+      "words": 3,
+      "chars": 16,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.1,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.61,
+      "top": 9168,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "UPGRADE",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 66.3,
+      "vw": 16.9,
+      "font": "Switzer",
+      "weight": 600,
+      "tracking": -0.04,
+      "leading": 0.9,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.89,
+      "top": 9969,
+      "tag": "div",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 10,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Switzer",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      13,
+      17,
+      20,
+      32,
+      39,
+      51,
+      66
+     ],
+     "sizeCount": 7,
+     "notLoaded": [],
+     "body": {
+      "font": "Switzer",
+      "size": 17,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 8.4
+     },
+     "measureChars": 41,
+     "max": {
+      "size": 66.3,
+      "vw": 16.9,
+      "font": "Switzer",
+      "text": "UPGRADE"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#101114",
+     "bodyBgHsl": {
+      "h": 225,
+      "s": 0.11,
+      "l": 0.07
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#17181c",
+       "top": 1694,
+       "hsl": {
+        "h": 228,
+        "s": 0.1,
+        "l": 0.1
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#a8aeb4",
+       "share": 0.55
+      },
+      {
+       "color": "#f4f4f1",
+       "share": 0.4
+      },
+      {
+       "color": "#d9a876",
+       "share": 0.04
+      },
+      {
+       "color": "#141414",
+       "share": 0.01
+      },
+      {
+       "color": "#6f737b",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#1d1f24",
+      "hsl": {
+       "h": 223,
+       "s": 0.11,
+       "l": 0.13
+      },
+      "fg": "#f4f4f1"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 8,
+     "inHero": 3,
+     "radius": "pill",
+     "height": 58,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "+7 902 006-67-77",
+      "Записаться: +7 902 006-67-77",
+      "Что делаем"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 2,
+     "boxRadius": 99,
+     "squareMedia": 5,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 6854
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.29
+     }
+    ],
+    "nav": {
+     "links": 2,
+     "fixed": false,
+     "height": 117,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "switzer"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 393,
+     "h": 851
+    },
+    "pageH": 10242,
+    "margins": {
+     "left": 20,
+     "right": 23
+    },
+    "sections": [
+     {
+      "sel": "section.hero",
+      "tag": "section",
+      "top": 237,
+      "height": 1338,
+      "words": 54,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 20,
+      "right": 26,
+      "textLeft": 20,
+      "textRight": 26,
+      "fullBleed": true,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.shead.rise",
+      "tag": "div",
+      "top": 1758,
+      "height": 164,
+      "words": 19,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 20,
+      "right": 39,
+      "textLeft": 20,
+      "textRight": 39,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.groups",
+      "tag": "div",
+      "top": 1986,
+      "height": 1265,
+      "words": 80,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Кузов и защита",
+       "size": 20,
+       "tag": "h3"
+      },
+      "left": 20,
+      "right": 25,
+      "textLeft": 20,
+      "textRight": 25,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.shead.rise",
+      "tag": "div",
+      "top": 3443,
+      "height": 190,
+      "words": 19,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 20,
+      "right": 62,
+      "textLeft": 20,
+      "textRight": 62,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.work-grid",
+      "tag": "div",
+      "top": 3697,
+      "height": 1334,
+      "words": 0,
+      "media": 4,
+      "middle": 0,
+      "heading": null,
+      "left": 20,
+      "right": 23,
+      "textLeft": null,
+      "textRight": null,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.work-sub",
+      "tag": "div",
+      "top": 5057,
+      "height": 372,
+      "words": 65,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 20,
+      "right": 32,
+      "textLeft": 20,
+      "textRight": 32,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#tseny.band",
+      "tag": "section",
+      "top": 5549,
+      "height": 1017,
+      "words": 89,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Цены из нашей карточки 2ГИС",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 23,
+      "textLeft": 20,
+      "textRight": 23,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#otzyvy",
+      "tag": "section",
+      "top": 6686,
+      "height": 1167,
+      "words": 119,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 20,
+      "right": 59,
+      "textLeft": 20,
+      "textRight": 59,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#sertifikat.cert",
+      "tag": "section",
+      "top": 7973,
+      "height": 840,
+      "words": 58,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Подарочный сертификат",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 23,
+      "textLeft": 20,
+      "textRight": 23,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#kontakty",
+      "tag": "section",
+      "top": 8933,
+      "height": 897,
+      "words": 64,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "+7 902 006-67-77",
+       "size": 32,
+       "tag": "a"
+      },
+      "left": 20,
+      "right": 23,
+      "textLeft": 20,
+      "textRight": 23,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer",
+      "tag": "footer",
+      "top": 9969,
+      "height": 272,
+      "words": 28,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 20,
+      "right": 44,
+      "textLeft": 20,
+      "textRight": 44,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [
+     {
+      "top": 1472,
+      "height": 280
+     },
+     {
+      "top": 7804,
+      "height": 260
+     }
+    ],
+    "h1s": [
+     {
+      "text": "Возвращаем чувство новизны",
+      "size": 51,
+      "top": 237,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 20,
+      "n": 20
+     },
+     {
+      "x": 54,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 22,
+    "bodySize": 17,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "still-page",
+   "width": 1440,
+   "message": "Little motion: 10 element(s) moved while the page loaded and scrolled.",
+   "fix": "Give every section an entrance for its parts (not one fade of the whole block) and add one moving picture: a looping clip or a slow move on a photograph."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "D:\\Z GR\\Апгрейд\\страница-А\\.taste-skill\\inspect\\desktop-fold.jpg",
+   "pages": [
+    "D:\\Z GR\\Апгрейд\\страница-А\\.taste-skill\\inspect\\desktop-page-01.jpg",
+    "D:\\Z GR\\Апгрейд\\страница-А\\.taste-skill\\inspect\\desktop-page-02.jpg",
+    "D:\\Z GR\\Апгрейд\\страница-А\\.taste-skill\\inspect\\desktop-page-03.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "D:\\Z GR\\Апгрейд\\страница-А\\.taste-skill\\inspect\\tablet-fold.jpg",
+   "pages": [
+    "D:\\Z GR\\Апгрейд\\страница-А\\.taste-skill\\inspect\\tablet-page-01.jpg",
+    "D:\\Z GR\\Апгрейд\\страница-А\\.taste-skill\\inspect\\tablet-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "D:\\Z GR\\Апгрейд\\страница-А\\.taste-skill\\inspect\\mobile-fold.jpg",
+   "pages": [
+    "D:\\Z GR\\Апгрейд\\страница-А\\.taste-skill\\inspect\\mobile-page-01.jpg",
+    "D:\\Z GR\\Апгрейд\\страница-А\\.taste-skill\\inspect\\mobile-page-02.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

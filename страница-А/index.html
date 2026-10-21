@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPGRADE · студия тонировки и детейлинга, Ульяновск</title>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#101114;          /* чёрный лак */
+  --surface:#17181c;     /* шаг тона */
+  --surface2:#1d1f24;
+  --ink:#f4f4f1;         /* тёплый белый */
+  --muted:#a8aeb4;
+  --accent:#c08355;      /* медь */
+  --accent-ink:#141414;
+  --glint:#d9a876;       /* светлая медь: полоса блика */
+  --m:32px;              /* внешние поля */
+  --step-small:clamp(0.8125rem,0.79rem + 0.1vw,0.875rem);
+  --step-body:clamp(1.0625rem,1rem + 0.25vw,1.1875rem);
+  --step-lead:clamp(1.25rem,1.1rem + 0.7vw,1.625rem);
+  --step-head:clamp(2.4rem,1.3rem + 4.6vw,5.5rem);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Switzer',system-ui,sans-serif;font-size:var(--step-body);line-height:1.55;-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:var(--accent-ink)}
+img{display:block;max-width:100%}
+a{color:inherit}
+
+/* мотив: полоса блика = длинный тонкий пилль */
+.blade{border-radius:999px;clip-path:inset(0 round 999px)}
+
+/* рамка: единые поля */
+.wrap{padding-left:var(--m);padding-right:var(--m);max-width:1440px;margin:0 auto}
+
+/* появления */
+.rise{opacity:0;transform:translateY(24px)}
+.rise.on{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
+.rise.on:nth-child(2){transition-delay:.08s}
+.rise.on:nth-child(3){transition-delay:.16s}
+.rise.on:nth-child(4){transition-delay:.24s}
+@media (prefers-reduced-motion: reduce){.rise{opacity:1;transform:none}.rise.on{transition:none}}
+
+/* --- шапка --- */
+header.nav{display:flex;align-items:center;justify-content:space-between;padding-top:22px;padding-bottom:22px}
+.wordmark{font-weight:600;font-size:1.25rem;letter-spacing:-.02em;text-decoration:none}
+.wordmark span{color:var(--muted)}
+.nav-right{display:flex;align-items:center;gap:28px}
+.nav-right a.t{font-size:var(--step-small);text-decoration:none;color:var(--muted)}
+.nav-right a.t:hover{color:var(--ink)}
+.nav-tel{text-decoration:none;font-weight:500;border-radius:999px;padding:10px 20px;background:var(--surface2)}
+.nav-tel:hover{background:#26282e}
+
+/* --- герой --- */
+.hero{padding-bottom:100px}
+.hero h1{font-size:var(--step-head);font-weight:600;letter-spacing:-.045em;line-height:.98;margin-top:56px;max-width:11ch}
+.hero p.lead{max-width:34em;color:var(--muted);margin-top:28px;font-size:var(--step-lead);line-height:1.45}
+.lead b{color:var(--ink);font-weight:500}
+.cta-row{margin-top:36px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;background:var(--accent);color:var(--accent-ink);font-weight:500;border-radius:999px;padding:16px 32px;font-size:var(--step-body)}
+.btn:hover{background:var(--glint)}
+.btn.ghost{background:var(--surface2);color:var(--ink)}
+.btn.ghost:hover{background:#26282e}
+.hero-img{margin-top:88px;position:relative;overflow:hidden;border-radius:999px;aspect-ratio:21/9}
+.hero-img img{width:100%;height:126%;object-fit:cover;object-position:center 38%;will-change:transform}
+@media (prefers-reduced-motion: no-preference){
+  .hero-img img{animation:drift 14s ease-in-out infinite alternate}
+  @keyframes drift{from{transform:translateY(-6%)}to{transform:translateY(-18%)}}
+}
+.hero-cap{color:var(--muted);font-size:var(--step-small);margin-top:14px}
+
+/* --- репутация --- */
+.rate{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;margin-top:96px}
+.rate .num{font-size:var(--step-head);font-weight:600;letter-spacing:-.04em;line-height:1}
+.rate .cap{color:var(--muted);max-width:30em}
+.rate .cap b{color:var(--ink);font-weight:500}
+
+/* --- услуги --- */
+section{margin-top:160px}
+.shead{display:grid;grid-template-columns:1fr 1fr;gap:0 64px;align-items:end}
+.shead h2{font-size:clamp(2rem,2.7vw + 1rem,3.1rem);font-weight:600;letter-spacing:-.04em;line-height:1.04}
+.shead p.sub{color:var(--muted);max-width:44ch}
+.groups{margin-top:64px;display:grid;grid-template-columns:repeat(2,1fr);gap:0 64px}
+.group{padding-top:36px;border-top:none}
+.group h3{font-size:var(--step-lead);font-weight:500;letter-spacing:-.02em;margin-bottom:6px}
+.group p.group-sub{color:var(--muted);font-size:var(--step-small);margin-bottom:22px}
+.group ul{list-style:none}
+.group li{display:flex;gap:14px;align-items:baseline;padding:11px 0;font-size:var(--step-body)}
+.bullet{flex:0 0 26px;height:6px;border-radius:999px;background:var(--accent);transform:translateY(-4px)}
+.group li span.note{color:var(--muted);font-size:var(--step-small)}
+
+/* --- работы --- */
+.work-grid{margin-top:64px;display:grid;grid-template-columns:1.6fr 1fr;gap:20px}
+.work-grid .cell img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.work-grid .cell.tall img{aspect-ratio:3/4}
+.work-grid{align-items:stretch}
+.cell{overflow:hidden}
+.cell .ph{overflow:hidden;height:100%}
+.work-sub{margin-top:26px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.work-sub .txt{max-width:52ch}
+.work-sub .txt p{color:var(--muted)}
+.work-sub .txt p b{color:var(--ink);font-weight:500}
+/* цены: настоящая таблица */
+table.prices{margin-top:56px;width:100%;border-collapse:collapse}
+table.prices td{padding:18px 0;vertical-align:top}
+table.prices td.c-name{font-size:var(--step-body);font-weight:500}
+table.prices td.c-name .d{display:block;color:var(--muted);font-size:var(--step-small);font-weight:400;margin-top:4px}
+table.prices td.c-price{white-space:nowrap;text-align:right;font-weight:600;letter-spacing:-.02em}
+table.prices tr{border-top:1px solid var(--surface2)}
+table.prices tr:first-child{border-top:none}
+.promo-strip{margin-top:40px;background:var(--surface);border-radius:999px;padding:20px 32px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+.promo-strip b{color:var(--glint);font-weight:600}
+/* отзывы */
+.rev-grid{margin-top:64px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.rev{background:var(--surface);padding:34px 34px 30px}
+.rev p{font-size:var(--step-body);line-height:1.55}
+.rev p b{color:var(--glint);font-weight:500}
+.rev .who{margin-top:22px;color:var(--muted);font-size:var(--step-small)}
+
+/* --- сертификат --- */
+.cert{background:var(--surface);border-radius:0;padding:96px var(--m);margin-top:200px}
+.cert-in{max-width:1440px;margin:0 auto}
+.cert h2{font-size:clamp(2rem,2.7vw + 1rem,3.1rem);font-weight:600;letter-spacing:-.04em;line-height:1.04}
+.cert p.sub{color:var(--muted);margin-top:16px;max-width:48ch}
+.nominals{margin-top:44px;display:flex;gap:14px;flex-wrap:wrap}
+.chip{background:transparent;border:none;color:var(--ink);font-family:inherit;font-size:var(--step-body);border-radius:999px;padding:14px 30px;background:var(--surface2);cursor:pointer;font-weight:500}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.chip:hover{background:#26282e}
+.chip[aria-pressed="true"]:hover{background:var(--glint)}
+.cert-coupon{margin-top:40px;background:var(--bg);border-radius:999px;padding:34px 40px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.cert-coupon .txt{font-size:var(--step-lead);letter-spacing:-.01em}
+.cert-coupon .txt b{color:var(--glint);font-weight:600}
+.copy-btn{background:var(--glint);border:none;font-family:inherit;font-weight:500;border-radius:999px;padding:14px 26px;cursor:pointer;color:var(--accent-ink)}
+.copy-btn:hover{background:var(--accent)}
+.cert-note{color:var(--muted);font-size:var(--step-small);margin-top:20px}
+
+/* --- контакты --- */
+.contact-grid{margin-top:64px;display:grid;grid-template-columns:1fr 1fr;gap:0 64px}
+.crow{display:flex;justify-content:space-between;gap:32px;padding:20px 0;border-bottom:none}
+.crow .k{color:var(--muted);font-size:var(--step-small);flex:0 0 9em}
+.crow .v{text-align:right;line-height:1.5}
+.crow .v a{text-decoration:none}
+.crow .v a:hover{color:var(--glint)}
+.big-tel{display:inline-block;text-decoration:none;font-size:clamp(2rem,2.7vw + 1rem,3.1rem);font-weight:600;letter-spacing:-.04em;margin-top:8px;color:var(--ink)}
+.big-tel:hover{color:var(--glint)}
+
+/* --- футер --- */
+footer{margin-top:170px;padding-bottom:60px}
+.foot-mark{font-weight:600;letter-spacing:-.04em;font-size:clamp(4rem,13.5vw,15rem);line-height:.9;white-space:nowrap;color:#6f737b}
+footer .credits{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;color:var(--muted);font-size:var(--step-small);margin-top:48px}
+
+/* --- телефон --- */
+section.band{background:var(--surface);margin-inline:calc(50% - 50vw);padding:84px max(var(--m),calc(50vw - 688px)) 92px}
+@media (max-width:900px){
+  .shead{grid-template-columns:1fr;gap:18px 0}
+  .contact-grid{grid-template-columns:1fr}
+  .crow .v{text-align:left}
+}
+@media (max-width:760px){
+  :root{--m:20px}
+  section.band{margin-inline:calc(var(--m)*-1);padding:64px var(--m) 72px}
+  .hero h1{margin-top:40px;font-size:clamp(2.6rem,13vw,4rem);max-width:none}
+  .hero-img{margin-top:56px;aspect-ratio:4/5;border-radius:0;margin-left:calc(var(--m)*-1);margin-right:calc(var(--m)*-1)}
+  .groups,.contact-grid,.work-grid,.rev-grid{grid-template-columns:1fr;gap:0}
+  .group{margin-bottom:44px}
+  .rev{margin-bottom:20px}
+  .work-grid .cell{margin-bottom:20px}
+  .work-grid .cell .ph{border-radius:0}
+  section{margin-top:120px}
+  .cert{margin-top:120px;margin-left:calc(var(--m)*-1);margin-right:calc(var(--m)*-1)}
+  .cert-coupon{border-radius:28px;flex-direction:column;align-items:flex-start}
+  .foot-mark{font-size:clamp(3.4rem,17vw,9rem)}
+  footer{margin-top:140px}
+  .nav-right a.t{display:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="nav">
+  <a class="wordmark" href="#" style="display:flex;gap:12px;align-items:center;text-decoration:none">
+    <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" style="flex:0 0 auto">
+      <rect x="1.5" y="1.5" width="31" height="31" rx="10" fill="none" stroke="#c08355" stroke-width="3"/>
+      <path d="M10 24 L24 10 M14 10 h10 v10" fill="none" stroke="#d9a876" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span>UPGRADE <span>· студия детейлинга</span></span>
+  </a>
+  <nav class="nav-right">
+    <a class="t" href="#uslugi">Услуги</a>
+    <a class="t" href="#raboty">Работы</a>
+    <a class="t" href="#tseny">Цены</a>
+    <a class="t" href="#otzyvy">Отзывы</a>
+    <a class="t" href="#sertifikat">Сертификат</a>
+    <a class="t" href="#kontakty">Контакты</a>
+    <a class="nav-tel" href="tel:+79020066777">+7 902 006-67-77</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1 class="rise on">Возвращаем чувство&nbsp;новизны</h1>
+  <p class="lead rise on">Студия <b>тонировки и детейлинга в Ульяновске</b>. Полировка кузова, керамическое покрытие, оклейка плёнкой, автосвет, химчистка салона.</p>
+  <div class="cta-row rise on">
+    <a class="btn" href="tel:+79020066777">Записаться: +7 902 006-67-77</a>
+    <a class="btn ghost" href="#uslugi">Что делаем</a>
+  </div>
+  <div class="hero-img rise on">
+    <img src="assets/vk-2.jpg" alt="Матовый чёрный Mercedes-AMG после оклейки полиуретановой плёнкой в студии Upgrade, Ульяновск" width="1173" height="834">
+  </div>
+  <p class="hero-cap">Mercedes-AMG в матовой полиуретановой плёнке. Одна из работ студии, кадр из нашего VK.</p>
+
+  <div class="rate">
+    <div class="num">5,0</div>
+    <div class="cap"><b>158 оценок и Премия 2ГИС.</b> Рейтинг студии в справочнике 2ГИС. Работаем по записи, ежедневно с 9:00.</div>
+  </div>
+</section>
+
+<section id="uslugi" class="band">
+  <div class="shead">
+    <h2>Что мы сделаем для вашего авто</h2>
+    <p class="sub">Кузов и защита, свет и оптика, стёкла, комфорт в салоне. Список ниже это то, чем занимаемся каждый день.</p>
+  </div>
+  <div class="groups">
+    <div class="group">
+      <h3>Кузов и защита</h3>
+      <p class="group-sub">Камень, песок и реагенты больше не угрожают лакокрасочному покрытию.</p>
+      <ul>
+        <li><span class="bullet"></span>Полировка кузова</li>
+        <li><span class="bullet"></span>Керамическое покрытие</li>
+        <li><span class="bullet"></span>Оклейка антигравийной плёнкой</li>
+        <li><span class="bullet"></span>Оклейка матовой полиуретановой плёнкой</li>
+      </ul>
+    </div>
+    <div class="group">
+      <h3>Стёкла и обзор</h3>
+      <p class="group-sub">Любой автомобиль, любой процент затемнения.</p>
+      <ul>
+        <li><span class="bullet"></span>Тонировка</li>
+        <li><span class="bullet"></span>Бронирование фар и фонарей</li>
+        <li><span class="bullet"></span>Полировка фар (от 1 000 ₽)</li>
+      </ul>
+    </div>
+    <div class="group">
+      <h3>Свет и оптика</h3>
+      <p class="group-sub">Чтобы свет дороги был уверенным, а не «как получится».</p>
+      <ul>
+        <li><span class="bullet"></span>Установка линз</li>
+        <li><span class="bullet"></span>Автосвет под заказ</li>
+        <li><span class="bullet"></span>Ремонт стёкол</li>
+      </ul>
+    </div>
+    <div class="group">
+      <h3>Комфорт</h3>
+      <p class="group-sub">Салон, в который снова приятно садиться.</p>
+      <ul>
+        <li><span class="bullet"></span>Химчистка салона и выведение запахов</li>
+        <li><span class="bullet"></span>Шумоизоляция (полная или частичная)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="raboty">
+  <div class="shead">
+    <h2>Матовая оклейка Mercedes-AMG</h2>
+    <p class="sub">Процесс с фотографий из нашего сообщества ВКонтакте: ювелирная зона риска, бархатистая поверхность, полная защита от сколов.</p>
+  </div>
+  <div class="work-grid">
+    <div class="cell"><div class="ph"><img src="assets/vk-1.jpg" alt="Матовый Mercedes-AMG, передняя часть после оклейки" loading="lazy" width="1035" height="776"></div></div>
+    <div class="cell tall"><div class="ph"><img src="assets/vk-3.jpg" alt="Mercedes-AMG в матовой плёнке, три четверти" loading="lazy" width="1099" height="824"></div></div>
+    <div class="cell"><div class="ph"><img src="assets/vk-6.jpg" alt="Корма матового Mercedes-AMG с красными фонарями" loading="lazy" width="1440" height="1080"></div></div>
+    <div class="cell"><div class="ph"><img src="assets/vk-2.jpg" alt="Фара матового Mercedes-AMG крупным планом" loading="lazy" width="1173" height="834"></div></div>
+  </div>
+  <div class="work-sub">
+    <div class="txt">
+      <p>Что сделали: кузов оклеен в полиуретановую матовую плёнку. Что говорит студия: «Текстурная глубина. Бархатистая поверхность. Полная защита от сколов и царапин».</p>
+      <p>«<b>Детали решают всё.</b> Зона риска оклеена с ювелирной точностью. Теперь камень, песок и реагенты больше не угрожают лакокрасочному покрытию. Это не просто защита, это забота о ценности вашего автомобиля». — из нашего VK.</p>
+    </div>
+    <a class="btn ghost" href="https://vk.com/upgrade_detailing">Больше работ во ВКонтакте</a>
+  </div>
+</section>
+
+<section id="tseny" class="band">
+  <div class="shead">
+    <h2>Цены из нашей карточки 2ГИС</h2>
+    <p class="sub">Обновлялись 12 марта 2025. Итог по именно вашему автомобилю назовём за две минуты по телефону: машину не видно, точных цифр не обещаем.</p>
+  </div>
+  <table class="prices">
+    <tbody>
+      <tr><td class="c-name">Тонирование автомобилей<span class="d">Любая сложность, без разбора. Съёмная тонировка. Гарантия на плёнку и работу.</span></td><td class="c-price">1 000 ₽</td></tr>
+      <tr><td class="c-name">Бронирование автомобиля<span class="d">Антигравийная защита кузова плёнкой.</span></td><td class="c-price">1 000 ₽</td></tr>
+      <tr><td class="c-name">Ремонт автостёкол</td><td class="c-price">1 000 ₽</td></tr>
+      <tr><td class="c-name">Оклейка авто защитной плёнкой</td><td class="c-price">от 1 000 ₽</td></tr>
+      <tr><td class="c-name">Полировка кузова</td><td class="c-price">от 1 000 ₽</td></tr>
+      <tr><td class="c-name">Химчистка салона</td><td class="c-price">от 500 ₽</td></tr>
+    </tbody>
+  </table>
+  <div class="promo-strip">Скажи,<b>что пришёл по промокоду 2ГИС</b>, и получи скидку 20%.</div>
+</section>
+
+<section id="otzyvy">
+  <div class="shead">
+    <h2>Что пишут в 2ГИС</h2>
+    <p class="sub">149 отзывов, рейтинг 5,0. Ниже то, что клиенты написали сами, без редактуры.</p>
+  </div>
+  <div class="rev-grid">
+    <div class="rev">
+      <p>«<b>Чётко озвучили сроки и стоимость</b>, держали в курсе процесса. Полировка выполнена на высшем уровне: машина выглядит ухоженной, исчезли мелкие дефекты».</p>
+      <div class="who">Александр П · 8 мая 2026 · подтверждён</div>
+    </div>
+    <div class="rev">
+      <p>«Обращаюсь не в первый раз: тонировка стёкол и защита кузова бронеплёнкой. <b>Доверяю им свою машину</b>, а они делают работу на совесть».</p>
+      <div class="who">Алексей А · 4 июля 2026 · подтверждён</div>
+    </div>
+    <div class="rev">
+      <p>«Менял у ребят лобовое стекло. <b>Парни мастера своего дела</b>, работа выполнена качественно».</p>
+      <div class="who">Евгений Ганин · 27 апреля 2026 · подтверждён</div>
+    </div>
+    <div class="rev">
+      <p>«Загоняли машины на бронеплёнку, тонировку. <b>Сделали всё на отлично</b>, всегда идут навстречу, отзывчивые ребята».</p>
+      <div class="who">Руслан Д · 14 мая 2026</div>
+    </div>
+  </div>
+</section>
+
+<section class="cert" id="sertifikat">
+  <div class="cert-in">
+    <h2>Подарочный сертификат</h2>
+    <p class="sub">Не знаете, что подарить автолюбителю? Подарите эмоции. Номинал выбирает получатель и сам решит, на что его направить.</p>
+    <div class="nominals" role="group" aria-label="Номинал сертификата">
+      <button class="chip" aria-pressed="true">5 000 ₽</button>
+      <button class="chip" aria-pressed="false">10 000 ₽</button>
+      <button class="chip" aria-pressed="false">15 000 ₽</button>
+    </div>
+    <div class="cert-coupon">
+      <div class="txt" id="coupon-text">Подарочный сертификат <b>5 000 ₽</b> · студия UPGRADE, Ульяновск, пр-т Туполева, 7В.</div>
+      <button class="copy-btn" id="copy-coupon">Скопировать текст</button>
+    </div>
+    <p class="cert-note">Бронирование сертификата: +7 902 006-67-77. Сумму можно выбрать и любую другую, обсудим по телефону.</p>
+  </div>
+</section>
+
+<section id="kontakty">
+  <div class="shead">
+    <h2>Записаться на удобное время</h2>
+    <p class="sub">Ответим на вопросы, подберём материал и дату. Звонок, сообщение в мессенджер или визит в студию, как удобнее.</p>
+  </div>
+  <div class="contact-grid">
+    <div>
+      <a class="big-tel" href="tel:+79020066777">+7 902 006-67-77</a>
+      <div class="crow"><div class="k">Телефон также в</div><div class="v">WhatsApp и Viber по этому же номеру</div></div>
+      <div class="crow"><div class="k">Instagram</div><div class="v"><a href="https://www.instagram.com/upgrade_detailing">@upgrade_detailing</a></div></div>
+      <div class="crow"><div class="k">Telegram</div><div class="v"><a href="https://t.me/upgrade_detailing">t.me/upgrade_detailing</a></div></div>
+    </div>
+    <div>
+      <div class="crow"><div class="k">Адрес студии</div><div class="v">Ульяновск, проспект Туполева, 7В,<br>Заволжский район, м-н Новый Город</div></div>
+      <div class="crow"><div class="k">Часы</div><div class="v">Ежедневно с 9:00, закрываемся в 20:00</div></div>
+      <div class="crow"><div class="k">Документы</div><div class="v">Премия 2ГИС · рейтинг 5,0 на 158 оценок</div></div>
+      <div class="crow"><div class="k">Почта</div><div class="v"><a href="mailto:upgrade_ulsk@mail.ru">upgrade_ulsk@mail.ru</a></div></div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-mark">UPGRADE</div>
+    <div class="credits">
+      <div>Фотографии работ: публичное сообщество ВКонтакте студии Upgrade (vk.com/upgrade_detailing).</div>
+      <div>Черновик страницы: VM Project, 19.10.2026. Адрес «7В или 7Б» сверить с владельцем до публикации.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// появления секций
+try {
+  const io = new IntersectionObserver((es) => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+  }, { threshold: 0.14 });
+  document.querySelectorAll('.shead, .cert h2, .cert p.sub, .nominals, .cert-coupon').forEach(el => {
+    el.classList.add('rise'); io.observe(el);
+  });
+} catch (e) {}
+
+// живая вещь: выбор номинала сертификата
+(function(){
+  const chips = Array.from(document.querySelectorAll('.nominals .chip'));
+  const txt = document.getElementById('coupon-text');
+  let current = '5 000 ₽';
+  chips.forEach(ch => ch.addEventListener('click', () => {
+    chips.forEach(c => c.setAttribute('aria-pressed', 'false'));
+    ch.setAttribute('aria-pressed', 'true');
+    current = ch.textContent.trim();
+    txt.innerHTML = 'Подарочный сертификат <b>' + current + '</b> · студия UPGRADE, Ульяновск, пр-т Туполева, 7В.';
+  }));
+  const cp = document.getElementById('copy-coupon');
+  cp.addEventListener('click', () => {
+    const raw = 'Подарочный сертификат ' + current + ' · студия UPGRADE, Ульяновск, пр-т Туполева, 7В. Бронь: +7 902 006-67-77';
+    try { navigator.clipboard.writeText(raw); cp.textContent = 'Скопировано'; setTimeout(() => cp.textContent = 'Скопировать текст', 1800); }
+    catch (e) { cp.textContent = raw; }
+  });
+})();
+</script>
+</body>
+</html>

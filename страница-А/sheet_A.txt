@@ -1,0 +1,173 @@
+# DIRECTION SHEET — One motif
+seed 807359192 · drawn 2026-10-19 · redraws: 1 · sector other · tone technical
+Brief: Upgrade — детейлинг-студия в Ульяновске: полировка кузова, керамические покрытия, химчистка салона; возвращаем блеск авто, изъеденным зимними реагентами; мотив — полоса блика на лаке
+
+| | |
+| --- | --- |
+| Direction | One motif |
+| Hero | Tabbed folder stack |
+| Type | Switzer |
+| Colour | Swapping pastels |
+| Sections | features (Specimens on colour tiles) → how-it-works (Accordion of tinted panels) → list (Two-column menu, photo bullets) → contact (Clip-out coupon form) → footer (The mark, built large) |
+| Motion | Index with preview |
+| Photographs | the "Forest" set, as atmosphere |
+
+This is the direction for this build. Adopt it. Do not blend it with the layout you would have made anyway,
+and do not redraw because it is unfamiliar: unfamiliar is the point. Redraw a slot only when it conflicts
+with a stated brand constraint or needs an asset that does not exist, and say why in your report.
+
+The parts of this sheet were written separately and will disagree in small ways. Settle every disagreement in this order:
+**house rules** (including type no smaller than 13px and body text of 16px or more) → **the direction** (the idea, the composition habits, where the
+one accent goes) → **the type system and the palette** (which face does which job, the five size steps, which colour is the ground and where the
+accent goes) → **the hero blueprint** → **the section blueprints**. Under each blueprint below, "Adjusted for this page" lists where it disagrees.
+In practice: take geometry from blueprints (columns, proportions, what sits where) and take everything else from above them. Map every size a
+blueprint names onto one of your five type steps instead of adding a sixth. Use one button shape, one corner radius and one pair of page margins on
+the whole page, whatever individual blueprints say. If a blueprint names a kind of typeface (a light serif, a heavy grotesk), use the dealt face.
+
+## 1. The idea
+Take one shape from the subject and let it run the whole system. A drilling tool's octagonal cross-section becomes the buttons, the image masks and the loader. A two-account money app becomes two circles that recur as icon, inline dot and section colour. A café's striped awning becomes every band on the page. Look at the product, the logo, the object or the word in the headline and find the simplest geometry in it (a circle, an arc, a chamfer, a stripe, a notch, a ring). Then use only that shape, at three or four very different scales, everywhere a designer would normally reach for a generic rounded rectangle.
+
+Before anything else, write one sentence in your notes: "On this page, <the subject's own material> becomes <the device>."
+Fill the first blank from your inventory of what only this client has (its name and what it means, its street, its numbers, its
+constraint), then put the nearest competitor in the sentence: if it still works, the idea is the category's, not the client's.
+Then name the one live thing the visitor can do on the page (SKILL.md step 4).
+
+## 2. Composition
+Hero: the motif appears once at enormous scale as a flat filled shape, cropped by the viewport (a circle 120vh across entering from the right, a chamfered block filling the lower half), with a short headline at 6–8vw and one supporting sentence set on the remaining ground, left-aligned on a shared margin. Through the page the motif returns as: the mask for every photograph (via `clip-path` or `border-radius` made from the same geometry), the shape of the primary button, the bullet beside list items at text size, and one full-width band that separates the two halves of the page. Sections use simple two-column or single-column layouts so the shape is the only thing with character.
+
+## 3. Type — Switzer
+One neo-grotesk doing everything: semibold headings pulled tight, small regular text, no capitals and no second voice. Suits software, hardware and studio pages that want to look exact and unshowy.
+```html
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap" rel="stylesheet">
+```
+- Display: **Switzer** — weight 600 · tracking -0.04em · leading 0.95 · sentence case; charcoal rather than pure black
+- Text: **Switzer** — 400 for body, 500 for emphasis · leading 1.5 · tracking -0.005em
+```css
+:root {
+  --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+  --step-head: clamp(2rem, 1.3rem + 3.2vw, 4rem);
+}
+```
+A clean geometric or grotesk face that echoes the shape (round bowls for circles, squared terminals for chamfers). Medium weight; headings 6–8vw in the hero and 3–4vw after.
+The direction decides sizes and how many of them; the type system decides how this face is set. Where the two give different tracking or leading, use the values of the type system: they are tuned to this face.
+The display size itself comes from the hero blueprint below.
+
+## 4. Colour — Swapping pastels
+```css
+:root {
+  --bg: #c3cbe5;
+  --surface: #d0d6eb;
+  --ink: #141414;
+  --muted: #4a5068;
+  --accent: #0f5257;
+  --accent-ink: #ffffff;
+  --field-1: #c3cbe5;  --field-1-ink: #141414;
+  --field-2: #efd3da;  --field-2-ink: #141414;
+  --field-3: #e6dccd;  --field-3-ink: #141414;
+  --field-4: #cfd3cb;  --field-4-ink: #141414;
+  --field-5: #f9cdbd;  --field-5-ink: #141414;
+}
+```
+One flat pastel is the whole background and it swaps per project or chapter: periwinkle, pink, sand, sage, peach. Type and one solid box stay near-black on all five, and dark teal is only for the button.
+The motif carries the accent colour at large scale, flat. Everything else is ground and ink. A second motif colour is allowed only if the subject has a real pair (two accounts, two modes).
+
+## 5. Imagery
+**The project has no photographs of its own yet.** First choice: **real pictures of the subject's world from the open collections**: its city and street in old postcards and photographs, an old map of the neighbourhood, its materials up close, its trade in engravings, museum objects of its kind (references/imagery.md §3). Start with `node C:/Users/Администратор/.zcode/skills/taste-skill/scripts/assets.mjs "<a place, material or object from your inventory>"`. Download what you use into the project with `--get` and credit every one on the page (`--credits` prints the footer line). They show the world around the client, never the client's own room, dish, product, person or team. Second, for what no honest picture exists of: draw the subject's own things in code, large, in one flat graphic language and the palette's real colours (its tiles, its windows, its objects; references/imagery.md §8). Third: the dealt photographs, only where an honestly generic picture fits (the sea, the weather, a material), never one a visitor could take for the thing itself and never an unrelated scene. One treatment for all of them. If this direction is built on photographs, plan the set before building (four to six pictures of one family) and reuse them at different crops and scales instead of finding or drawing a new picture for every slot; keep drawings as `<symbol>` + `<use>` or generate them with a small script so the page stays light. List every found picture (with its source and licence), every dealt photograph and every drawing that stands in for photography in your report.
+
+Photographs appear inside the motif's shape. If there is product interface to show, it sits on a flat colour stage shaped by the motif. Draw the shape with CSS or a simple inline SVG path; do not draw illustrations.
+
+**Floor (the inspector checks it):** at least four real pictures on the page, usually six to twelve; SVG drawings do not count. One moving picture where an honest clip exists: `node <skill>/scripts/assets.mjs --video "<query>"`, used as a muted loop with a poster frame. Whatever this direction says about pictures, it is carried out with real ones.
+
+Photographs dealt for this build, from the "Forest" set (woodland, paths between trees, moss and filtered light)
+Order of preference for imagery: (1) the project's own photographs and product shots; (2) images you generate, if an image tool is
+available; (3) real pictures of the subject's world found in the open collections (assets.mjs, downloaded and credited on the page);
+(4) drawings of the subject in code; (5) these. They are real photographs (Unsplash licence, served by picsum.photos) of places, light and
+texture. They are atmosphere, never a stand-in for a specific product, dish, person or interface. List the ones you use in your report so
+they can be replaced.
+- `https://picsum.photos/id/229/1600/1000` — Path through tall pine trees fading into blue-grey fog · dark tone · blue grey, dark green · native landscape · photo: Orlova Maria
+- `https://picsum.photos/id/10/1600/1000` — Dense evergreen forest with a blue lake and distant hills beyond · mid tone · deep green, teal blue · calm area: top · native landscape · photo: Paul Jarvis
+- `https://picsum.photos/id/216/1600/1000` — Narrow dirt trail through mossy green woodland · mid tone · moss green, brown · native landscape · photo: Paul Jarvis
+- `https://picsum.photos/id/805/1600/1000` — Band of dark conifer forest between a meadow and a blank white sky · mid tone · white, dark green, olive brown · calm area: top · native landscape · photo: Jens Lelie
+- `https://picsum.photos/id/877/1600/1000` — Tall tree trunks in a misty forest with blue-grey light · mid tone · slate blue, dark brown, mist grey · native landscape · photo: Sebastian Unrau
+- `https://picsum.photos/id/243/1600/1000` — Autumn larch forest on a foggy hillside with a footpath · mid tone · rust brown, pale grey, olive green · calm area: top · native landscape · photo: Orlova Maria
+- `https://picsum.photos/id/879/1600/1000` — Aerial view of a narrow path cutting through dense dark forest · dark tone · deep green, dark teal, grey · native landscape · photo: Nick Scheerbart
+- `https://picsum.photos/id/730/1600/1000` — Snow-dusted conifer forest fading into pale winter fog · light tone · frost white, pale grey, slate green · calm area: top · native landscape · photo: Ryan Pohanic
+The last two path numbers are width and height: request the exact crop you render (`/1200/1500` for a 4:5 portrait, `/2400/1350` for a hero) and
+add `?grayscale` to desaturate. Use three to six of them, not all eight. Always set `width`, `height`, `alt` and `loading="lazy"` (not on the hero image).
+Other sets that fit this brief: fog-and-quiet, coast, mountain, water — `node draw.mjs --photos <set>` prints one in full; `--photos list` shows all sets. Taking photographs from another set is your call and is not a redraw; keep them to one light and one treatment.
+
+## 6. Hero — Tabbed folder stack
+A dark flat ground. A slim top row at 24px holds the wordmark dead centre and one text link far right at 15px. The headline is one centred line of heavy condensed capitals at clamp(96px, 10vw, 160px), spanning about 70% of the width, its cap line 110px from the top. Under it one supporting sentence in a serif at 20px, centred, max 46ch. From 51% of the height down the screen is a stack of five file folders: flat colour bands 86% of the viewport wide, centred, each offset 64px below the one behind so only a strip of the back four shows. Every folder has one trapezoid tab rising 40px from its top edge, cut with `clip-path: polygon()`, at its own horizontal position and in its own colour, holding one section name at 18px. The front folder is open and runs off the bottom edge; it carries the single action as a solid button at its top-left with 32px padding. Each folder links to its section and lends that section its ground colour. The tab shape returns as the button's top corners.
+
+On a phone: The headline sits 96px down at 17vw on one line, or two at 15vw, centred, with the supporting sentence at 16px beneath. The folder stack starts at 48svh at full width: bands offset 52px, tabs 32px tall with names at 15px, staggered left, centre and right. The front folder runs off the bottom with the action button at full width inside it.
+Headline: The name or a two-word statement on one line of up to about 12 characters at 10vw; two lines allowed on a phone.
+
+Adjusted for this page:
+- It names a kind of typeface: use the dealt faces (display Switzer, text Switzer) and their settings; capitals only where the type system sets them.
+
+## 7. Sections, in order
+Each is a composition to rebuild with this project's content. Keep the geometry; change the subject. Re-order or drop a
+section when the argument of the page needs it (see references/copy.md), never to fall back to a card grid.
+
+### 1. features — Specimens on colour tiles (grid)
+Each capability is represented by one object photographed alone and shown on a flat colour tile. Columns 1–3 hold the heading (two to four words at 40–52px), top-aligned, with a 30ch sentence beneath and nothing else down the rest of that column. Columns 4–12 hold a grid of five or six tiles in two rows with 10px gaps: tiles are 4:5 except one, which is double width at 8:5 and placed second in the first row. Tile colours rotate through three palette fields. Each photograph is centred at about 70% of its tile's height; on light tiles use mix-blend-mode: multiply so a white studio background disappears. Under each tile, outside it and aligned to its left edge: the capability name at 20px medium and one fact at 16px in the soft ink. No text on the tiles and no hover lift.
+On a phone: The heading and its sentence sit on top at full width. Tiles become a two-column grid with 8px gaps; the double tile spans both columns at 8:5 and comes first. Names shrink to 17px and facts to 15px, still under each tile.
+
+### 2. how-it-works — Accordion of tinted panels (strip)
+A two-column introduction, then one horizontal accordion. Introduction: the heading, two to four words at clamp(36px, 4vw, 60px), in columns 1–5; one paragraph at 18px in columns 7–11. 64px below, a flex row across columns 1–12, 520px tall, of four to six panels with no gaps. The open stage is a panel taking about 58% of the width; the rest are vertical slivers sharing what remains. Order is carried by colour: the first stage is the darkest tone of one hue and each later stage is a lighter flat tint of it, so the row reads dark to light from left to right. A sliver shows only its stage name, rotated 90 degrees and reading upward, at 20px bold, anchored to its bottom-left. The open panel shows the name at 40px top-left, a 36ch paragraph at 18px bottom-left and, optionally, one photograph in its right half. Clicking a sliver opens it (flex-basis transition, 450ms).
+On a phone: The accordion turns vertical: stages stack at full width as bars 64px tall in the same dark-to-light order, names set horizontally at 18px. The open stage expands to its content height with the paragraph at 17px. The first stage is open by default.
+
+### 3. list — Two-column menu, photo bullets (grid)
+A menu or catalogue list in which each item has a small cut-out photograph where a bullet would be. Each category opens with its name at clamp(32px, 3.4vw, 50px) at the left margin and the number of items at 16px right-aligned on the same baseline, with 96px above and 40px below. Items then run in two columns with a 64px gutter and 36px between rows. Each item is a two-part row: a 64px photograph of the item on a plain background at the left (multiplied onto the ground with `mix-blend-mode: multiply`, or masked to the page's one shape), then 20px to its right the name in bold at 17–18px with the price right-aligned on the same line, and beneath it a two- or three-line description at 15px in the soft ink, max 38ch. A short note such as an allergen follows the description in the accent ink. No boxes. Holds 6–10 items per category.
+On a phone: One column. Photographs shrink to 52px and stay at the left; name and price share the first line with the description beneath at 15px. Category names at 8.5vw with the count on the same baseline. A sticky row of category names as text links lets the reader jump.
+
+### 4. contact — Clip-out coupon form (split)
+The form is a coupon to cut out. One filled card in a strong flat colour, about 2.2:1, spans columns 2–11 with a 14px radius, with 120px of ground above and below. Semicircular notches 28px across are cut into its top and bottom edges at the 46% mark with `clip-path` or an SVG `mask`, and a vertical row of round dots (a dotted `border-left` 5px thick in the ground colour) joins the two notches as the perforation. Left of the perforation, with 48px padding: a two-line heading of three to five words at clamp(28px, 3vw, 44px) in heavy capitals at the top, and one sentence at 16px at the bottom. Right of it: four inputs stacked with 10px gaps, each a filled block 52px tall in a lighter tone of the card with its placeholder at 16px, then a full-width solid submit bar 56px tall in the darkest ink. Inputs keep visually hidden `label` elements.
+On a phone: The card turns upright and spans the width with 12px margins. The perforation becomes horizontal: notches on the left and right edges, dots across. Heading and sentence sit above it; the four inputs and the submit bar sit below, each 54px tall.
+
+Adjusted for this page:
+- It names its own corners: use the one radius of this page (square unless the direction says otherwise) and one button shape.
+- It names a kind of typeface: use the dealt faces (display Switzer, text Switzer) and their settings; capitals only where the type system sets them.
+- It draws lines or borders: keep them only inside a table, a form or a `data-ui` fragment; elsewhere separate with space or a change of ground.
+
+### 5. footer — The mark, built large (band)
+On a flat colour field, the brand closes the page as a construction rather than as set type. Across the full content width and about 34svh tall, the wordmark is built from blocks: each letter is knocked out of its own solid rectangle in a palette colour, the rectangles differ in height (60–100% of the band) and butt together with 4px gaps, bottoms on one line. Where the project has a simple geometric mark or motif, enlarge that instead, drawn as inline SVG from flat rectangles, circles and quarter-arcs with the same 4px gaps. Below, 56px lower: four columns of plain links at 15px across columns 1–8, and two addresses or contact lines in columns 9–12. A last row carries the copyright at the left and one small filled button at the right. Space and the block construction do all the separating.
+On a phone: The block wordmark spans the full width at about 22svh tall; a long name breaks into two rows of blocks. Link columns go two across at 15px, contact lines beneath at full width, then copyright and the small button on one row.
+
+## 8. Motion — Index with preview
+Rows of text are the navigation through the work; pointing at a row brings up its image in one fixed frame and dims the other rows. On touch screens each row shows its image inline instead. Fast and exact (about 240ms crossfade), no lag behind the pointer. Recipe: 'Index with preview, anchored to the row' in references/motion.md.
+This is the signature move, the one loud moment. Around it the page still needs the rest of the motion layer (SKILL.md step 9): an entrance for the parts of every section, feedback on every control, and one moving picture. The inspector fails a page that barely moves. Recipes: references/motion.md.
+
+## 10. Where the richness comes from
+One shape at many sizes. The giant cropped shape gives the hero mass and colour without a single image.
+
+## 11. How this direction goes wrong
+One motif means one. A circle here, a hexagon there and a blob behind is the generated look this replaces. The motif must come from the subject and you must be able to say from where in one clause.
+
+## 12. Real references
+Studied sites that work this way. Take the principle, never the specifics: no names, copy, images or signature assets of theirs.
+- **Midnight** (One Page Love, studied score 7.1) `opl-midnight-2`
+  Idea: The headline's circles are literally pictured: one blurred dark ring, sliced into horizontal bands, becomes the hero, the demo panel, the session cards and the footer.
+  Hero: No navigation at all. A canvas fills the full width and the top 90% of the viewport: a huge out-of-focus dark navy ring on drifting taupe, sage and terracotta, cut into horizontal bands about 78px tall that are slightly offset like blinds. On the vertical centre line, starting 58px from the left, sit a small rounded-square line icon and a one-line headline at 48px in cream. On the same baseline, starting 59% across, a two-line 17px statement whose first sentence is white and bold while the rest drops to half opacity. The cream page background shows as a 90px strip at the bottom. No button.
+  Worth taking: Slice a soft blurred gradient into horizontal bands with small offsets so a familiar glow becomes a recognisable, ownable texture.
+- **SSTR - Friction Reduction** (Awwwards Site of the Day, studied score 7.7) `aww-sstr-friction-reduction`
+  Idea: Drilling hardware treated like precision consumer tech: a chamfered octagon taken from the tool's cross-section drives the buttons, icons and loader.
+  Hero: The captured first viewport is the preloader: a 2 by 2 grid with hairline dividers, top-left quadrant solid orange with the slash-prefixed name at 5.6vw in black bold grotesk; top-right dark with a plus-sign dot grid and an orange square beside a percentage; bottom quadrants hold wireframe octagon stacks under small labels. The real hero is a full-bleed grey 3D render of a steel downhole tool rising from bottom centre. A two-line uppercase headline at about 3.5vw in light grotesk sits left-anchored at mid-height, with a short paragraph and an orange chamfered-corner button below. A slim bar holds logo left, five small caps links, globe and contact right.
+  Worth taking: Derive one shape from the product (here a chamfered octagon) and reuse it for button corners, icons and loader graphics.
+- **CoMinVi** (Awwwards Site of the Day, studied score 7.3) `aww-cominvi`
+  Idea: A heavy-industry contractor presented with a cinematic CG mine scene and survey-style monospace annotations, then a clean white corporate report beneath.
+  Hero: Full-bleed dark blue-black CG scene of an underground cavern: rock in the foreground, haze, and a mining truck with lit headlamps right of centre. The headline is flush left at a 32px margin, vertically centred, two lines of bold white grotesk at 56px (3.9vw), filling about 40% of the width. Top-left a small boxed logo; top-right the word 'Menu' beside a 48px outlined circle with two bars. A tiny two-line mono annotation is pinned to the truck. Bottom-right, two bordered image cards about 215x140px, each with a white label strip inside its lower edge carrying mono caps and a black triangle.
+  Worth taking: Pin a tiny monospace data annotation to an object inside the hero image so the picture reads like a labelled survey.
+Full notes on any of them: `node draw.mjs --site <id>`.
+
+## Always
+Headlines two lines or fewer at every width. No eyebrow labels, no monospace, no 01/02/03, no thin rules, no gradients, no shadows at rest,
+no cream-and-terracotta, no violet. The frame: one h1 on the first screen that says what this is, equal outer margins, no
+section huddled on one side with the other half empty, no blank stretch over half a screen, a heading on every section.
+`inspect.mjs` measures all of it.
+
+Saved to D:/Z GR/_taste_demo/upgrade/A/.taste-skill/direction.json · reprint with `node draw.mjs --show`
